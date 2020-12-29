@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>SpaceWalkers</title>
+
+    <link rel="stylesheet" href="./css/index.css" />
+		<link />
+		<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="./src/js/index.js"></script>
+	</head>
+	
+  <body>
+
+    <header id="invest" class="header container">
+      <nav class="nav-menu">
+        <div class="logo">
+          <a href="#"
+            ><img src="./src/assets/images/spacewalkers-logo.png" alt="logo"
+          /></a>
+        </div>
+        <div class="menu">
+          <a href="#benefits" class="smooth-container "><p>Korzyści</p></a>
+          <a href="#form"><p>szkolenie</p></a>
+          <a href="#invest"><p class="active">zainwestuj</p></a>
+        </div>
+      </nav>
+      <section class="invest">
+        <div class="invest__text">
+          <p class="invest__text-label">
+            Branża gamingowa jest warta prawie 150 mld dolarów.
+          </p>
+          <h1>Dowiedz się jak możesz na tym zarobić</h1>
+          <div class="invest__text-button">
+            <a href="#form"><button type="submit" class="button">
+              <span>zostań inwestorem</span>
+            </button></a>
+          </div>
+        </div>
+      </section>
+		</header>
+		
+    <main>
+      <section id="benefits" class="benefits container">
+        <div class="benefits__text">
+          <p class="benefits__text-label">Korzyści inwestowania w gaming</p>
+          <h2 class="benefits__text-title">
+						Inwestorzy z&nbsp;całego świata dostrzegli potencjał inwestycji w&nbsp;gaming. 
+						Co napędza ich optymizm?
+          </h2>
+          <ul class="benefits__text-description">
+            <li>bardzo wysoki popyt na produkcje wideo</li>
+            <li>gry komputerowe są odporne na kryzys</li>
+            <li>po wyprodukowaniu gry, można sprzedawać dowolną ilość kopii</li>
+            <li>zarabiasz na każdej sprzedanej sztuce</li>
+          </ul>
+        </div>
+      </section>
+      <section id="instructions" class="instructions container">
+        <div class="instructions__text">
+          <div class="instructions__text-left">
+            <h2>Weź udział w szkoleniu</h2>
+            <p>
+              To proste. Zdobądź najbardziej aktualną wiedzę na temat czerpania
+              zysków z inwestycji w gaming i zastosuj ją z naszą pomocą.
+              <br />
+              <br />
+
+              Skomplikowane i nieefektywne inwestycje to już pieśń przeszłości.
+              Dzięki nowej technologii możesz zyskasz więcej i zabezpieczysz
+              swoje ciężko zarobione pieniądze.
+						</p>
+          </div>
+          <div id='form' class="instructions__text-right">
+            <h2>Wypełnij formularz<br/> i dowiedz się więcej</h2>
+            <form action="https://tecra.space/api/spacewalkers/training" method="POST" @submit.prevent="sendForm">
+              <div class="input-placeholder">
+								<input id="name" type="text" name="name" value required />
+                <div class="placeholder">Imię i nazwisko <span>*</span></div>
+              </div>
+              <br />
+              <div class="input-placeholder">
+							<textarea id="company" type="text" name="company" placeholder="Nazwa firmy" style="color: black;"></textarea>
+              </div>
+              <br />
+              <div class="input-placeholder">
+								<textarea id="mobile-number" type="text" name="mobile-number"  placeholder="Numer telefonu" pattern="[0-9]{3}[0-9]{3}[0-9]{3}"></textarea>
+              </div>
+              <br />
+              <div class="input-placeholder">
+								<textarea id="email" type="text" name="email" required onkeypress="disappear()"></textarea>
+                <div id="holderReq" class="placeholder">
+                  Adres e-mail <span>*</span>
+                </div>
+              </div>
+              <br />
+              <div class="input-placeholder">
+							<textarea class="largeTextArea" id="message" type="text" name="message" placeholder="Wiadomość"></textarea>
+              <br />
+              <div class="checkbox">
+								<input type="checkbox" id="legals" required />
+                <div class="term-scroll">
+                  <p>
+                    <span class="red">*</span>  Oświadczam, że jestem osobą pełnoletnią, podaję dane osobowe
+                    dobrowolnie i są one zgodne z prawdą. Oświadczam, że
+                    zapoznałem się z regulaminem serwisu i polityką prywatności
+                    serwisu i w pełni ją akceptuję. Oświadczam, że zapoznałem
+                    się z informacjami o ryzyku związane z przetrzymywaniem
+                    środków w walutach wirtualnych i w pełni je akceptuję.
+                    Wyrażam zgodę na przetwarzanie moich danych osobowych przez
+                    administratora danych: Omnibus24.net OU 14829541. Harju
+                    maakond, Tallinn, Kristiine Iinnaosa, Artelli tn 14, 106211
+                    w celu realizacji zamówień kryptowalut online.
+                  </p>
+                </div>
+							</div>
+							<div class="checkbox">
+								<input type="checkbox" id="legals" required />
+                <div class="term">
+                  <p>
+                    <span class="red">*</span> Przeczytałem i akceptuję<br /> <a target="_blank" href="https://procoinmarket.com//info/page/polityka-prywatno-ci/">politykę prywatności</a>
+									</p>
+								</div>
+							</div>
+							<div class="checkbox">
+								<input type="checkbox" id="legals" required />
+                <div class="term">
+                  <p>
+                    <span class="red">*</span> Przeczytałem i akceptuję <br /><a target="_blank" href="https://procoinmarket.com/info/page/regulamin/">regulamin serwisu</a>
+									</p>
+								</div>
+							</div>
+							<div class="checkbox">
+								<input type="checkbox" id="legals" required />
+                <div class="term">
+                  <p>
+                    <span class="red">*</span> Przeczytałem i akceptuję <br /> <a target="_blank" href="https://procoinmarket.com/info/page/informacja-o-ryzyku/">informację o ryzyku</a>
+									</p>
+								</div>
+							</div>
+							<button type="submit" class="button button-full">
+								<span>wyślij wiadomość</span>
+              </button>
+            </form>
+          </div>
+        </div>
+      </section>
+    </main>
+    <footer class="footer container">
+      <div class="logo">
+        <a href="#"
+          ><img src="./src/assets/images/spacewalkers-logo.png" alt="logo"
+        /></a>
+      </div>
+      <div class="footer__adress">
+        <p>
+          <span class="bold">Spacewalkers Sp. z o.o.</span> <br />
+          ul. Zabłocie 25/10, 30-701 Kraków
+        </p>
+      </div>
+      <div class="footer__contact">
+        <p>
+          mail: <span class="orange">hello@spacewalkers.games</span>
+        </p>
+      </div>
+    </footer>
+  </body>
+</html>
+<!-- https://tecra.space/api/spacewalkers/training -->
+<!-- /*# sourceMappingURL=index.css.map */ -->
