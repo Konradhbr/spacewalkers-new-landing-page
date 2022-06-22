@@ -6,14 +6,18 @@
     <title>Spacewalkers landing page</title>
 
     <link rel="stylesheet" href="./css/index.css" />
-		<link />
-		<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
-		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+    <link />
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+      AOS.init();
+    </script>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="./src/js/index.js"></script>
-	</head>
-	
-  <body>
+  </head>
 
+  <body>
     <header id="invest" class="header container">
       <nav class="nav-menu">
         <div class="logo">
@@ -22,129 +26,310 @@
           /></a>
         </div>
         <div class="menu">
-          <a href="#benefits" class="smooth-container "><p>Korzyści</p></a>
+          <!-- <a href="#contact" class="smooth-container"><p>Kontakt</p></a>
           <a href="#form"><p>szkolenie</p></a>
-          <a href="#invest"><p class="active">zainwestuj</p></a>
+          <a href="#invest"><p>zainwestuj</p></a> -->
         </div>
       </nav>
-      <section class="invest">
-        <div class="invest__text">
-          <p class="invest__text-label">
-            Branża gamingowa jest warta prawie 150 mld dolarów.
-          </p>
-          <h1>Dowiedz się jak możesz na tym zarobić</h1>
-          <div class="invest__text-button">
-            <a href="#form"><button type="submit" class="button">
-              <span>zostań inwestorem</span>
-            </button></a>
-          </div>
-        </div>
-      </section>
-		</header>
-		
+    </header>
     <main>
-      <section id="benefits" class="benefits container">
-        <div class="benefits__text">
-          <p class="benefits__text-label">Korzyści inwestowania w gaming</p>
-          <h2 class="benefits__text-title">
-						Inwestorzy z&nbsp;całego świata dostrzegli potencjał inwestycji w&nbsp;gaming. 
-						Co napędza ich optymizm?
-          </h2>
-          <ul class="benefits__text-description">
-            <li>bardzo wysoki popyt na produkcje wideo</li>
-            <li>gry komputerowe są odporne na kryzys</li>
-            <li>po wyprodukowaniu gry, można sprzedawać dowolną ilość kopii</li>
-            <li>zarabiasz na każdej sprzedanej sztuce</li>
-          </ul>
-        </div>
-      </section>
-      <section id="instructions" class="instructions container">
-        <div class="instructions__text">
-          <div class="instructions__text-left">
-            <h2>Weź udział w szkoleniu</h2>
+      <section id="contact" class="contact container">
+        <div class="contact__text">
+          <div class="contact__text-left">
+            <h2 style="margin-bottom: 20px">
+              Zostaw kontakt<br />
+              <span class="text--gradient">i porozmawiajmy.</span>
+            </h2>
+            <h4>
+              Inwestuj z potencjałem
+              <span class="text--gradient">i zarabiaj!</span>
+            </h4>
             <p>
-              To proste. Zdobądź najbardziej aktualną wiedzę na temat czerpania
-              zysków z inwestycji w gaming i zastosuj ją z naszą pomocą.
-              <br />
-              <br />
-
-              Skomplikowane i nieefektywne inwestycje to już pieśń przeszłości.
-              Dzięki nowej technologii możesz zyskasz więcej i zabezpieczysz
-              swoje ciężko zarobione pieniądze.
-						</p>
+              Przedstawimy Ci kilka opcji na zainwestowanie w branżę gamingową i
+              nasze studio - Spacewalkers Games.
+            </p>
+            <p style="margin-top: 0px">
+              Stworzyliśmy i wypuściliśmy w świat 1 grę, a pracujemy nad 3
+              kolejnymi. Nasza pierwsza gra osiągnęła tysiące pobrań na Steam, a
+              także spory sukces finansowy i komercyjny. Z powodzeniem
+              znajdujemy kolejnych inwestorów, ale wciąż szukamy nowych.
+            </p>
+            <h4>
+              Dołącz do nich! Wypełnij formularz i zaznacz
+              <span class="text--gradient">kiedy możemy zadzwonić.</span>
+            </h4>
+            <p>Zarabiaj z nami na grach!</p>
           </div>
-          <div id='form' class="instructions__text-right">
-            <h2>Wypełnij formularz<br/> i dowiedz się więcej</h2>
-            <form action="https://tecra.space/api/spacewalkers/training" method="POST" @submit.prevent="sendForm">
+          <div id="form" class="contact__text-right">
+            <h4>
+              Wypełnij formularz
+              <span class="text--gradient"> i dowiedz się więcej</span>
+            </h4>
+            <form
+              action="https://tecra.space/api/spacewalkers/training"
+              method="POST"
+              @submit.prevent="sendForm"
+            >
               <div class="input-placeholder">
-								<input id="name" type="text" name="name" value required />
+                <input id="name" type="text" name="name" value required />
                 <div class="placeholder">Imię i nazwisko <span>*</span></div>
               </div>
               <br />
               <div class="input-placeholder">
-							<textarea id="company" type="text" name="company" placeholder="Nazwa firmy" style="color: black;"></textarea>
+                <input
+                  id="mobile-number"
+                  type="number"
+                  name="mobile-number"
+                  value
+                  required
+                  pattern="[0-9]{3}[0-9]{3}[0-9]{3}"
+                />
+                <div class="placeholder">Numer telefonu</div>
               </div>
               <br />
               <div class="input-placeholder">
-								<textarea id="mobile-number" type="text" name="mobile-number"  placeholder="Numer telefonu" pattern="[0-9]{3}[0-9]{3}[0-9]{3}"></textarea>
+                <input id="email" type="email" name="email" required />
+                <div class="placeholder">Adres e-mail <span>*</span></div>
               </div>
               <br />
-              <div class="input-placeholder">
-								<textarea id="email" type="text" name="email" required onkeypress="disappear()"></textarea>
-                <div id="holderReq" class="placeholder">
-                  Adres e-mail <span>*</span>
+              <div class="input-placeholder-wrapper">
+                <div class="input-placeholder">
+                  <label for="day">Preferowany dzień i godzina kontaktu</label>
+                  <select id="day" type="text" name="day" value required>
+                    <option value="poniedzialek">Poniedziałek</option>
+                    <option value="wtorek">Wtorek</option>
+                    <option value="sroda">Środa</option>
+                    <option value="czwartek">Czwartek</option>
+                    <option value="piatek">Piątek</option>
+                  </select>
+                </div>
+                <div class="input-placeholder">
+                  <select id="time" type="text" name="time" value required>
+                    <option value="8:00-11:00">8:00-11:00</option>
+                    <option value="12:00-15:00">12:00-15:00</option>
+                    <option value="16:00-19:00">16:00-19:00</option>
+                  </select>
                 </div>
               </div>
               <br />
               <div class="input-placeholder">
-							<textarea class="largeTextArea" id="message" type="text" name="message" placeholder="Wiadomość"></textarea>
-              <br />
-              <div class="checkbox">
-								<input type="checkbox" id="legals" required />
-                <div class="term-scroll">
+                <br />
+                <div class="checkbox">
+                  <input type="checkbox" id="legals" required />
                   <p>
-                    <span class="red">*</span>  Oświadczam, że jestem osobą pełnoletnią, podaję dane osobowe
-                    dobrowolnie i są one zgodne z prawdą. Oświadczam, że
-                    zapoznałem się z regulaminem serwisu i polityką prywatności
-                    serwisu i w pełni ją akceptuję. Oświadczam, że zapoznałem
-                    się z informacjami o ryzyku związane z przetrzymywaniem
-                    środków w walutach wirtualnych i w pełni je akceptuję.
-                    Wyrażam zgodę na przetwarzanie moich danych osobowych przez
-                    administratora danych: Omnibus24.net OU 14829541. Harju
-                    maakond, Tallinn, Kristiine Iinnaosa, Artelli tn 14, 106211
-                    w celu realizacji zamówień kryptowalut online.
+                    <span class="red">*</span>Oświadczam, że zapoznałem się z
+                    regulaminem serwisu i polityką prywatności i w pełni je
+                    akceptuje.
                   </p>
                 </div>
-							</div>
-							<div class="checkbox">
-								<input type="checkbox" id="legals" required />
-                <div class="term">
+              </div>
+              <div class="input-placeholder">
+                <div class="checkbox">
+                  <input type="checkbox" id="legals" required />
                   <p>
-                    <span class="red">*</span> Przeczytałem i akceptuję<br /> <a target="_blank" href="https://procoinmarket.com//info/page/polityka-prywatno-ci/">politykę prywatności</a>
-									</p>
-								</div>
-							</div>
-							<div class="checkbox">
-								<input type="checkbox" id="legals" required />
-                <div class="term">
+                    <span class="red">*</span>Wyrażam zgodę na przetwarzanie
+                    moich danych osobowych przez administratora danych:
+                    Omnibus24.net OÜ 14829541 Tallinn, Artelli tn 14, 106211 w
+                    celu realizacji zamówień kryptowalut online.
+                  </p>
+                </div>
+              </div>
+              <div class="input-placeholder">
+                <div class="checkbox">
+                  <input type="checkbox" id="legals" required />
                   <p>
-                    <span class="red">*</span> Przeczytałem i akceptuję <br /><a target="_blank" href="https://procoinmarket.com/info/page/regulamin/">regulamin serwisu</a>
-									</p>
-								</div>
-							</div>
-							<div class="checkbox">
-								<input type="checkbox" id="legals" required />
-                <div class="term">
-                  <p>
-                    <span class="red">*</span> Przeczytałem i akceptuję <br /> <a target="_blank" href="https://procoinmarket.com/info/page/informacja-o-ryzyku/">informację o ryzyku</a>
-									</p>
-								</div>
-							</div>
-							<button type="submit" class="button button-full">
-								<span>wyślij wiadomość</span>
-              </button>
+                    <span class="red">*</span>Wyrażam zgodę na otrzymywanie
+                    drogą elektroniczną na wskazany przeze mnie adres e-mail
+                    informacji handlowej w rozumieniu art. 10 ust. 1 ustawy z
+                    dnia 18 lipca 2002 roku o świadczeniu usług drogą
+                    elektroniczną przez: Omnibus24.net OÜ 14829541 Tallinn,
+                    Artelli tn 14, 106211.
+                  </p>
+                </div>
+              </div>
+              <div class="button__wrapper">
+                <button type="submit" class="button button-full">
+                  <span>wyślij wiadomość</span>
+                </button>
+              </div>
+              <div class="checkbox">
+                <p>
+                  Nasza rozmowa potrwa ok. 15 minut. Zarezerwuj sobie chwilę, bo
+                  chcemy przekazać Ci komplet informacji inwestycyjnych.
+                </p>
+              </div>
             </form>
           </div>
+        </div>
+        <div class="contact__footer" data-aos="zoom-in">
+          <h1>
+            Zarabiaj na wartej prawie
+            <span class="text--gradient">175 mld dolarów</span> branży
+            gamingowej.
+          </h1>
+          <button class="button"><span>Zostaw kontakt</span></button>
+          <h4>
+            a nasi specjaliści od inwestycji skontaktują się z Tobą i
+            przedstawią ofertę.
+          </h4>
+        </div>
+      </section>
+
+      <section id="process" class="process container">
+        <div class="process__title">
+          <h2>Jak wygląda proces inwestycyjny?</h2>
+        </div>
+        <div class="process__steps">
+          <div class="process__step">
+            <div class="process__step__wrapper">
+              <h3 class="process__step__number">1</h3>
+              <img src="/src/assets/images/contact.png" alt="contact" />
+            </div>
+            <div class="process__step__description">
+              <p>
+                Kontaktujemy się z Tobą i podajemy komplet informacji, wszystkie
+                szczegóły oraz wysyłamy linki do sprawdzenia.
+              </p>
+            </div>
+          </div>
+          <div class="process__step">
+            <div class="process__step__wrapper">
+              <h3 class="process__step__number">2</h3>
+              <img src="/src/assets/images/key.png" alt="access" />
+            </div>
+            <div class="process__step__description">
+              <p>
+                Dostajesz dostęp do platformy inwestycyjnej, gdzie możesz o
+                dowolnej porze dnia sprawdzić jak pracują Twoje pieniądze.
+                Serwis jest zabezpieczony jak w banku - nikt niepowołany nie
+                wejdzie na Twoje konto.
+              </p>
+            </div>
+          </div>
+          <div class="process__step">
+            <div class="process__step__wrapper">
+              <h3 class="process__step__number">3</h3>
+              <img src="/src/assets/images/investment.png" alt="invest" />
+            </div>
+            <div class="process__step__description">
+              <p>
+                Wybierasz opcję inwestycji, która najbardziej Ci odpowiada.To
+                coś w rodzaju pakietu, jednak to Ty wybierasz czego chcesz.
+              </p>
+            </div>
+          </div>
+          <div class="process__step">
+            <div class="process__step__wrapper">
+              <h3 class="process__step__number">4</h3>
+              <img src="/src/assets/images/info.png" alt="information" />
+            </div>
+            <div class="process__step__description">
+              <p>
+                Informujemy Cię o nowościach, postępach oraz nowych szansach
+                inwestycyjnych.
+              </p>
+            </div>
+          </div>
+          <div class="process__step">
+            <div class="process__step__wrapper">
+              <h3 class="process__step__number">5</h3>
+              <img src="/src/assets/images/earn.png" alt="earn" />
+            </div>
+            <div class="process__step__description">
+              <p>Zaczynasz z nami zarabiać i oczywiście grasz w nasze gry ;)</p>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="button__section">
+        <button class="button">
+          <span>Chcę poznać opcje inwestycyjne</span>
+        </button>
+      </section>
+      <section id="whyinvest" class="process whyinvest container">
+        <div class="process__title">
+          <h2>Dlaczego miałbyś zainwestować?</h2>
+        </div>
+        <div class="process__steps">
+          <div class="process__step">
+            <div class="process__step__wrapper">
+              <h3 class="process__step__number text--gradient">1</h3>
+              <img src="/src/assets/images/joystick.png" alt="contact" />
+            </div>
+            <div class="process__step__description">
+              <p>
+                Bo wydaliśmy, póki co, 1 grę, pobraną tysiące razy. W planach są
+                3 kolejne, w tym jedna już na ukończeniu.
+              </p>
+            </div>
+          </div>
+          <div class="process__step">
+            <div class="process__step__wrapper">
+              <h3 class="process__step__number text--gradient">2</h3>
+              <img src="/src/assets/images/3d-cube.png" alt="access" />
+            </div>
+            <div class="process__step__description">
+              <p>
+                Bo realizujemy właśnie innowacyjny projekt badawczy
+                „Inteligentny system kreacji map do gier 3D oparty na platformie
+                Unreal Engine wykorzystujący techniki uczenia maszynowego” o
+                łącznych kosztach 11 013 701,62 PLN.
+              </p>
+            </div>
+          </div>
+          <div class="process__step">
+            <div class="process__step__wrapper">
+              <h3 class="process__step__number text--gradient">3</h3>
+              <img src="/src/assets/images/book.png" alt="invest" />
+            </div>
+            <div class="process__step__description">
+              <p>
+                Bo nasze gry są na podstawie powieści Przemka Kardy, które
+                sprzedały się już w dziesiątkach tysięcy egzemplarzy i są na
+                liście bestsellerów Empiku (i nie tylko), a my mamy na nie
+                wyłączność.
+              </p>
+            </div>
+          </div>
+          <div class="process__step">
+            <div class="process__step__wrapper">
+              <h3 class="process__step__number text--gradient">4</h3>
+              <img src="/src/assets/images/people.png" alt="information" />
+            </div>
+            <div class="process__step__description">
+              <p>
+                Bo mamy dedykowany zespół ekspertów, którzy pomogą Ci w całym
+                procesie inwestycyjnym. Jesteśmy w stałym kontakcie i
+                przekazujemy Ci wciąż nowe informacje. Nie zostawiamy Cię samego
+                po zainwestowaniu. Pokażemy Ci jak Twoje pieniądze pracują.
+              </p>
+            </div>
+          </div>
+          <div class="process__step">
+            <div class="process__step__wrapper">
+              <h3 class="process__step__number text--gradient">5</h3>
+              <img src="/src/assets/images/24-hours.png" alt="earn" />
+            </div>
+            <div class="process__step__description">
+              <p>
+                Bo nasz zespół ma na koncie wypracowanych kilka tysięcy godzin
+                doświadczenia oraz stworzonych i wypuszczonych kilka całkiem
+                niezłych gier.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="yt-video">
+        <div class="yt-video__wrapper">
+          <h2>Zobacz sam</h2>
+          <iframe
+            src="https://www.youtube.com/embed/aiAID0BTpSw"
+            title="YouTube video player"
+            frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowfullscreen
+          ></iframe>
         </div>
       </section>
     </main>
@@ -161,12 +346,11 @@
         </p>
       </div>
       <div class="footer__contact">
-        <p>
-          mail: <span class="orange">hello@spacewalkers.games</span>
-        </p>
+        <p>mail: <span class="orange">hello@spacewalkers.games</span></p>
       </div>
     </footer>
+    <script>
+      AOS.init();
+    </script>
   </body>
 </html>
-<!-- https://tecra.space/api/spacewalkers/training -->
-<!-- /*# sourceMappingURL=index.css.map */ -->

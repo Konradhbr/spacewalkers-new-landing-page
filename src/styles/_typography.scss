@@ -1,0 +1,253 @@
+@import 'fonts';
+
+//=============================
+//  [Body]
+//=============================
+body {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-weight: 100;
+}
+
+//=============================
+//  [Mixins]
+//=============================
+
+@mixin fontSizes(
+  $sizexs: inherit,
+  $sizesm: false,
+  $sizemd: false,
+  $sizelg: false
+) {
+  & {
+    font-size: #{$sizexs};
+  }
+
+  @if $sizesm {
+    @media screen and (min-width: $screen-sm) {
+      & {
+        font-size: #{$sizesm};
+      }
+    }
+  }
+
+  @if $sizemd {
+    @media screen and (min-width: $screen-md) {
+      & {
+        font-size: #{$sizemd};
+      }
+    }
+  }
+
+  @if $sizelg {
+    @media screen and (min-width: $screen-lg) {
+      & {
+        font-size: #{$sizelg};
+      }
+    }
+  }
+}
+
+//=============================
+//  [Links]
+//=============================
+
+a {
+  text-decoration: none;
+  outline: 0;
+  font-family: 'Anton-Regular', sans-serif;
+}
+
+a:hover,
+a:active,
+a:focus {
+  outline: 0;
+  color: powderblue;
+}
+
+a:hover {
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+  }
+}
+
+//=============================
+//  [Headers]
+//=============================
+
+// http://engageinteractive.co.uk/blog/em-vs-rem-vs-px
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: 'Anton-Regular', sans-serif;
+  width: 100%;
+  line-height: 1.1;
+  color: white;
+  transition: color 300ms ease;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+h1 {
+  @include fontSizes(65px, 65px, 75px, 105px);
+}
+
+h2 {
+  @include fontSizes(50px, 55px, 55px, 75px);
+}
+
+h3 {
+  @include fontSizes(45px, 55px, 75px, 75px);
+}
+
+h4 {
+  @include fontSizes(20px, 20px, 20px, 26px);
+}
+
+h6 {
+  letter-spacing: 4px;
+  text-transform: uppercase;
+  margin: 0;
+  @include fontSizes(12px, 12px 12px, 12px);
+}
+
+@media screen and (min-width: $screen-sm) {
+}
+
+@media screen and (min-width: $screen-md) {
+}
+
+@media screen and (min-width: $screen-lg) {
+}
+
+//=============================
+//  [Paragraph]
+//=============================
+p {
+  font-family: 'OpenSans-Light', sans-serif;
+  font-size: inherit;
+  line-height: 28px;
+  color: white;
+  @include fontSizes(18px, 14px, 14px, 17px);
+}
+
+@media screen and (min-width: $screen-sm) {
+  p {
+  }
+}
+
+@media screen and (min-width: $screen-md) {
+  p {
+  }
+}
+
+@media screen and (min-width: $screen-lg) {
+  p {
+  }
+}
+
+//=============================
+//  [Strong]
+//=============================
+strong {
+  // font-family: 'Canaro-SemiBold', sans-serif;
+  font-weight: 100;
+}
+
+@media screen and (min-width: $screen-sm) {
+  strong {
+  }
+}
+
+@media screen and (min-width: $screen-md) {
+  strong {
+  }
+}
+
+@media screen and (min-width: $screen-lg) {
+  strong {
+  }
+}
+
+//=============================
+//  [Blockquote]
+//=============================
+blockquote {
+  font-size: 20px;
+  text-align: center;
+}
+
+@media screen and (min-width: $screen-sm) {
+  blockquote {
+    font-size: 15px;
+  }
+}
+
+@media screen and (min-width: $screen-md) {
+  blockquote {
+    font-size: 17px;
+  }
+}
+
+@media screen and (min-width: $screen-lg) {
+  blockquote {
+    font-size: 20px;
+  }
+}
+
+//=============================
+//  [Lists]
+//=============================
+
+ul {
+  margin: 0;
+  padding: 0;
+}
+
+li {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.list li {
+  //background-image: url('/assets/images/svg/list-marker.svg');
+  background-repeat: no-repeat;
+  background-position: left 6px;
+  padding-left: 36px;
+  margin-bottom: 5px;
+}
+
+@media screen and (min-width: $screen-sm) {
+  .list li {
+    background-position: left 3px;
+    font-size: 14px;
+  }
+}
+
+//=============================
+//  [Menu]
+//=============================
+
+menu {
+  font-size: 24px;
+  text-transform: uppercase;
+  //font-family: 'Canaro-Bold';
+  text-align: left;
+  // color: $white;
+}
+
+// //=============================
+// //  [Decor]
+// //=============================
+
+// .decor {
+//   font-size: 14px !important;
+// }
