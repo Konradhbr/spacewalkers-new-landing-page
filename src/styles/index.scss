@@ -1,23 +1,10 @@
 @import 'grid';
 @import 'fonts';
 @import 'typography';
-@import 'timeline';
 @import 'aos/dist/aos.css';
+@import 'team';
 
 // -----------------------------------------BASE ---------------------------------
-
-// @font-face {
-//   font-family: 'nexa-bold';
-//   src: url('/fonts/nexa-bold.woff2') format('woff2'),
-//     url('/fonts/nexa-bold.woff') format('woff'), font-weight bold;
-// }
-
-// @font-face {
-//   font-family: 'nexa-book';
-//   src: url('/fonts/nexa-book.woff2') format('woff2'),
-//     url('/fonts/nexa-book.woff') format('woff'), font-weight normal;
-// }
-
 body,
 html {
   width: 100%;
@@ -25,7 +12,7 @@ html {
   margin: 0;
   padding: 0;
   font-family: 'Nexa', sans-serif;
-  overflow-x: hidden;
+  overflow-x: auto;
   color: white;
   scroll-behavior: smooth;
   background-image: url(/src/assets/images/page-background.jpg);
@@ -39,22 +26,6 @@ html {
 .smooth-container {
   scroll-behavior: smooth;
 }
-
-// p {
-//  // font-size: 20px;
-//   line-height: 30px;
-// }
-
-// h1 {
-//   font-size: 50px;
-//   line-height: 50px;
-//   margin: 30px 0 30px 0;
-// }
-
-// h2 {
-//   font-size: 30px;
-//   line-height: 30px;
-// }
 
 li {
   font-size: 16px;
@@ -122,7 +93,6 @@ button {
     #858bff 46.27%,
     #ffffff 100%
   );
-  //background: radial-gradient(97.96% 67.96% at 35.39% 18.08%, #61e7ff 0%, #858bff 46.27%, #ffffff 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
@@ -198,22 +168,6 @@ button {
   }
 }
 
-// .active {
-//   position: relative;
-
-//   &::after {
-//     content: '';
-//     position: absolute;
-//     display: block;
-//     left: -19px;
-//     top: 15px;
-//     width: 125px;
-//     height: 19px;
-//     background-color: #61e7ff;
-//     z-index: -1;
-//   }
-// }
-
 .invest {
   margin-top: 20px;
   width: 100%;
@@ -228,10 +182,24 @@ button {
 .contact {
   &__text {
     margin-top: 50px;
+    // z-index: 3;
+    // position: relative;
 
-    &-left {
-      text-align: center;
-    }
+    // &::before {
+    //   content: '';
+    //   position: absolute;
+    //   left: 0;
+    //   top: 0;
+    //   width: 100%;
+    //   height: auto;
+    //   z-index: -1;
+    //   background-image: url('/src/assets/images/image4.png');
+    //   background-size: cover;
+    //   background-position: center right;
+    //   &-left {
+    //     text-align: center;
+    //   }
+    // }
 
     &-right {
       margin-top: 50px;
@@ -265,10 +233,14 @@ button {
     min-height: 200px;
     max-width: 500px;
     border-radius: 20px;
-    background-color: white;
+    background-color: transparent;
     border: 4px solid #61e7ff;
     padding: 30px;
     margin-bottom: 30px;
+
+    img {
+      width: 64px;
+    }
 
     &:hover {
       box-shadow: rgba(78, 229, 255) 0px 7px 29px 0px;
@@ -290,7 +262,7 @@ button {
     &__description {
       p {
         margin-top: 0;
-        color: black;
+        color: white;
         opacity: 1;
         font-weight: bold;
       }
@@ -387,97 +359,17 @@ button {
     }
   }
 }
-// // --------------------------------------- BENEFITS ----------------------------------------
-// .benefits {
-//   position: relative;
-//   display: flex;
-//   justify-content: center;
-//   width: 100%;
-//   height: 1000px;
-//   // margin-top: -128px;
-//   z-index: 4;
-// }
+// ---------------------------------------  Games images ----------------------------------------
 
-// .benefits__text {
-//   text-align: left;
-//   width: 70%;
-
-//   p {
-//     font-size: 18px;
-//     margin-top: 0;
-//     font-weight: bold;
-//   }
-
-//   ul {
-//     padding-left: 15px;
-//     list-style: none;
-
-//     li {
-//       &::before {
-//         content: '\2022';
-//         color: orange;
-//         font-weight: bold;
-//         display: inline-block;
-//         width: 1em;
-//         margin-left: -1em;
-//       }
-//     }
-//   }
-// }
-
-// --------------------------------------- INSTRUCTIONS ----------------------------------------
-.instructions {
-  position: relative;
+.images {
   display: flex;
+  justify-content: space-between;
   align-items: center;
-  justify-content: flex-end;
+  margin: 100px auto;
   width: 100%;
-  height: 100%;
-  z-index: 4;
 
-  &::before {
-    content: '';
-    position: absolute;
-    background-image: url(/src/assets/images/image3.png);
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-size: 153% auto;
-    background-position: center 8%;
-    background-repeat: no-repeat;
-    z-index: -1;
-  }
-
-  form {
-    z-index: 10;
-  }
-}
-
-.instructions__text {
-  display: flex;
-  align-items: center;
-  flex-direction: column;
-  margin-top: -145px;
-}
-
-.instructions__text-left {
-  width: 100%;
-  text-align: center;
-}
-
-.instructions__text-right {
-  width: 100%;
-  background-color: #020d42;
-  padding: 20px 50%;
-  margin-top: 300px;
-
-  h2 {
-    padding: 0 10%;
-  }
-
-  form {
-    padding: 0 10%;
+  img {
+    width: 30%;
   }
 }
 
@@ -611,6 +503,136 @@ textarea {
   height: auto;
   width: 100%;
 }
+//  ---------------------------SUMMARY----------------------------------------------
+
+.summary {
+  margin-top: 120px;
+  margin-bottom: 100px;
+  &__title {
+    text-align: center;
+  }
+
+  &__description {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    p {
+      overflow: hidden; /* Ensures the content is not revealed until the animation */
+      border-right: 0.15em solid #858bff; /* The typwriter cursor */
+      margin: 0 auto; /* Gives that scrolling effect as the typing happens */
+      letter-spacing: 0.15em; /* Adjust as needed */
+      font-size: 16px;
+      animation: typing 5s steps(40, end), blink-caret 1s step-end infinite;
+    }
+
+    // &__left,
+    // &__right {
+    //   width: 40%;
+    // }
+
+    &__right {
+      padding-top: 25px;
+
+      // img {
+      //   width: 100%;
+      //   margin-top: 40px;
+      // }
+    }
+  }
+
+  &__footer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    // &__left,
+    // &__right {
+    //   width: 40%;
+    // }
+
+    &__top {
+      text-align: center;
+    }
+
+    &__right {
+      > div {
+        margin: 0 auto;
+        text-align: center;
+        width: 300px;
+
+        h4 {
+          margin: 0 10px;
+        }
+
+        button {
+          width: 100%;
+        }
+      }
+    }
+  }
+}
+
+@keyframes typing {
+  from {
+    width: 0;
+  }
+  to {
+    width: 100%;
+  }
+}
+
+/* The typewriter cursor effect */
+@keyframes blink-caret {
+  from,
+  to {
+    border-color: transparent;
+  }
+  50% {
+    border-color: #858bff;
+  }
+}
+
+.animated {
+  background-image: url(/css/images/logo.png);
+  background-repeat: no-repeat;
+  background-position: left top;
+  //  padding-top: 95px;
+  margin-bottom: 60px;
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both;
+}
+
+.aniamted-1 {
+  -webkit-animation-duration: 5s;
+  animation-duration: 5s;
+}
+
+@-webkit-keyframes fadeInLeft {
+  0% {
+    opacity: 0;
+    -webkit-transform: translateX(-20px);
+  }
+  100% {
+    opacity: 1;
+    -webkit-transform: translateX(0);
+  }
+}
+
+@keyframes fadeInLeft {
+  0% {
+    opacity: 0;
+    transform: translateX(-20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.fadeInLeft {
+  -webkit-animation-name: fadeInLeft;
+  animation-name: fadeInLeft;
+}
 
 //  ---------------------------FOOTER----------------------------------------------
 .footer {
@@ -706,27 +728,6 @@ textarea {
       }
     }
   }
-  // .benefits {
-  //   justify-content: flex-end;
-  //   height: 700px;
-  //   //margin-top: -270px;
-
-  //   // &::before {
-  //   //   background-size: 70% auto;
-  //   //   background-position: -63% center;
-  //   //   background-repeat: no-repeat;
-  //   // }
-  // }
-
-  // .benefits__text {
-  //   width: 50%;
-  //   //padding-top: 150px;
-
-  //   p {
-  //     font-weight: bold;
-  //   }
-  // }
-
   // ----------------------------CONTACT-----------------------------------------------
   .contact {
     &__text {
@@ -753,7 +754,7 @@ textarea {
       padding: 0;
       margin-top: 0;
       background-color: transparent;
-      zoom: 0.65;
+      zoom: 0.72;
 
       h2,
       form {
@@ -762,15 +763,51 @@ textarea {
       }
     }
 
-    // &__footer {
-    //   margin-top: 60px;
-    // }
-
     .button-full {
       width: 100%;
     }
   }
 
+  // ----------------------------SUMMARY-----------------------------------------------
+
+  .summary {
+    &__description {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: flex-start;
+      &__left,
+      &__right {
+        width: 40%;
+      }
+
+      &__right {
+        img {
+          width: 100%;
+          height: auto;
+        }
+      }
+    }
+
+    &__footer {
+      margin-top: 100px;
+      &__top {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+      &__wrapper {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        margin-top: 100px;
+      }
+      &__left,
+      &__right {
+        width: 40%;
+      }
+    }
+  }
   // ---------------------------------------FOOTER-----------------------------------------------
   .footer {
     flex-direction: row;
@@ -785,13 +822,6 @@ textarea {
 
 @media screen and (min-width: 1366px) {
   // --------------------------------------------BENEFITS----------------------------------
-  .benefits {
-    height: 950px;
-  }
-
-  // .benefits__text {
-  //   padding-top: 250px;
-  // }
 }
 
 @media screen and (min-width: 1440px) {
@@ -821,14 +851,6 @@ textarea {
       }
     }
   }
-
-  .instructions {
-    height: 1300px;
-  }
-
-  .instructions__text-right {
-    width: 35%;
-  }
 }
 
 @media screen and (min-width: 1600px) {
@@ -838,36 +860,90 @@ textarea {
 }
 
 @media screen and (min-width: 1920px) {
-  .benefits {
-    height: 1100px;
-
-    // &::before {
-    //   background-position: -20% 30%;
-    //   background-size: 60% auto;
-    // }
-  }
-
-  .instructions {
-    height: 1320px;
-    margin-top: -350px;
-
-    // &::before {
-    //   background-position: center center;
-    //   background-size: 70% auto;
-    // }
-  }
 }
 
 @media screen and (min-width: 2560px) {
-  .benefits {
-    height: 1300px;
-  }
+}
 
-  // .benefits__text {
-  //   padding-top: 350px;
-  // }
+/*! locomotive-scroll v4.1.3 | MIT License | https://github.com/locomotivemtl/locomotive-scroll */
+html.has-scroll-smooth {
+  overflow: hidden;
+}
 
-  // .instructions {
-  //   height: 1600px;
-  // }
+html.has-scroll-dragging {
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.has-scroll-smooth body {
+  overflow: hidden;
+}
+
+.has-scroll-smooth [data-scroll-container] {
+  min-height: 100vh;
+}
+
+[data-scroll-direction='horizontal'] [data-scroll-container] {
+  height: 100vh;
+  display: inline-block;
+  white-space: nowrap;
+}
+
+[data-scroll-direction='horizontal'] [data-scroll-section] {
+  display: inline-block;
+  vertical-align: top;
+  white-space: nowrap;
+  height: 100%;
+}
+
+.c-scrollbar {
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 11px;
+  height: 100%;
+  transform-origin: center right;
+  transition: transform 0.3s, opacity 0.3s;
+  opacity: 0;
+}
+.c-scrollbar:hover {
+  transform: scaleX(1.45);
+}
+.c-scrollbar:hover,
+.has-scroll-scrolling .c-scrollbar,
+.has-scroll-dragging .c-scrollbar {
+  opacity: 1;
+}
+[data-scroll-direction='horizontal'] .c-scrollbar {
+  width: 100%;
+  height: 10px;
+  top: auto;
+  bottom: 0;
+  transform: scaleY(1);
+}
+[data-scroll-direction='horizontal'] .c-scrollbar:hover {
+  transform: scaleY(1.3);
+}
+
+.c-scrollbar_thumb {
+  position: absolute;
+  top: 0;
+  right: 0;
+  background-color: black;
+  opacity: 0.5;
+  width: 7px;
+  border-radius: 10px;
+  margin: 2px;
+  cursor: -webkit-grab;
+  cursor: grab;
+}
+.has-scroll-dragging .c-scrollbar_thumb {
+  cursor: -webkit-grabbing;
+  cursor: grabbing;
+}
+[data-scroll-direction='horizontal'] .c-scrollbar_thumb {
+  right: auto;
+  bottom: 0;
 }

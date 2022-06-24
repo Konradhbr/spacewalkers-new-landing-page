@@ -9,8 +9,15 @@
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
     <link />
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="./scrolls.min.js"></script>
+    <script src="locomotive-scroll.min.js"></script>
     <script>
-      AOS.init();
+      (function () {
+        var scroll = new LocomotiveScroll({
+          el: document.querySelector('[data-scroll-container]'),
+          smooth: true,
+        });
+      })();
     </script>
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
@@ -84,7 +91,7 @@
                   required
                   pattern="[0-9]{3}[0-9]{3}[0-9]{3}"
                 />
-                <div class="placeholder">Numer telefonu</div>
+                <div class="placeholder">Numer telefonu <span>*</span></div>
               </div>
               <br />
               <div class="input-placeholder">
@@ -101,13 +108,15 @@
                     <option value="sroda">Środa</option>
                     <option value="czwartek">Czwartek</option>
                     <option value="piatek">Piątek</option>
+                    <option value="sobota">Sobota</option>
                   </select>
                 </div>
                 <div class="input-placeholder">
                   <select id="time" type="text" name="time" value required>
                     <option value="8:00-11:00">8:00-11:00</option>
-                    <option value="12:00-15:00">12:00-15:00</option>
-                    <option value="16:00-19:00">16:00-19:00</option>
+                    <option value="12:00-15:00">11:00-14:00</option>
+                    <option value="16:00-19:00">14:00-17:00</option>
+                    <option value="20:00-21:00">17:00-21:00</option>
                   </select>
                 </div>
               </div>
@@ -118,8 +127,15 @@
                   <input type="checkbox" id="legals" required />
                   <p>
                     <span class="red">*</span>Oświadczam, że zapoznałem się z
-                    regulaminem serwisu i polityką prywatności i w pełni je
-                    akceptuje.
+                    <a href="https://procoinmarket.com/info/page/regulamin/"
+                      >regulaminem serwisu</a
+                    >
+                    i
+                    <a
+                      href="https://procoinmarket.com/info/page/polityka-prywatno-ci/"
+                      >polityką prywatności</a
+                    >
+                    i w pełni je akceptuje.
                   </p>
                 </div>
               </div>
@@ -152,7 +168,7 @@
                   <span>wyślij wiadomość</span>
                 </button>
               </div>
-              <div class="checkbox">
+              <div>
                 <p>
                   Nasza rozmowa potrwa ok. 15 minut. Zarezerwuj sobie chwilę, bo
                   chcemy przekazać Ci komplet informacji inwestycyjnych.
@@ -167,7 +183,9 @@
             <span class="text--gradient">175 mld dolarów</span> branży
             gamingowej.
           </h1>
-          <button class="button"><span>Zostaw kontakt</span></button>
+          <a href="#invest"
+            ><button class="button"><span>Zostaw kontakt</span></button></a
+          >
           <h4>
             a nasi specjaliści od inwestycji skontaktują się z Tobą i
             przedstawią ofertę.
@@ -175,7 +193,7 @@
         </div>
       </section>
 
-      <section id="process" class="process container">
+      <section id="invest-process" class="process container">
         <div class="process__title">
           <h2>Jak wygląda proces inwestycyjny?</h2>
         </div>
@@ -183,7 +201,7 @@
           <div class="process__step">
             <div class="process__step__wrapper">
               <h3 class="process__step__number">1</h3>
-              <img src="/src/assets/images/contact.png" alt="contact" />
+              <img src="/src/assets/images/contact.svg" alt="contact" />
             </div>
             <div class="process__step__description">
               <p>
@@ -192,10 +210,10 @@
               </p>
             </div>
           </div>
-          <div class="process__step">
+          <div class="process__step" data-aos="fade-up">
             <div class="process__step__wrapper">
               <h3 class="process__step__number">2</h3>
-              <img src="/src/assets/images/key.png" alt="access" />
+              <img src="/src/assets/images/access.svg" alt="access" />
             </div>
             <div class="process__step__description">
               <p>
@@ -209,7 +227,7 @@
           <div class="process__step">
             <div class="process__step__wrapper">
               <h3 class="process__step__number">3</h3>
-              <img src="/src/assets/images/investment.png" alt="invest" />
+              <img src="/src/assets/images/invest.svg" alt="invest" />
             </div>
             <div class="process__step__description">
               <p>
@@ -221,7 +239,7 @@
           <div class="process__step">
             <div class="process__step__wrapper">
               <h3 class="process__step__number">4</h3>
-              <img src="/src/assets/images/info.png" alt="information" />
+              <img src="/src/assets/images/information.svg" alt="information" />
             </div>
             <div class="process__step__description">
               <p>
@@ -233,7 +251,7 @@
           <div class="process__step">
             <div class="process__step__wrapper">
               <h3 class="process__step__number">5</h3>
-              <img src="/src/assets/images/earn.png" alt="earn" />
+              <img src="/src/assets/images/earn.svg" alt="earn" />
             </div>
             <div class="process__step__description">
               <p>Zaczynasz z nami zarabiać i oczywiście grasz w nasze gry ;)</p>
@@ -242,16 +260,18 @@
         </div>
       </section>
       <section class="button__section">
-        <button class="button">
-          <span>Chcę poznać opcje inwestycyjne</span>
-        </button>
+        <a href="#invest">
+          <button class="button">
+            <span>Chcę poznać opcje inwestycyjne</span>
+          </button></a
+        >
       </section>
       <section id="whyinvest" class="process whyinvest container">
         <div class="process__title">
           <h2>Dlaczego miałbyś zainwestować?</h2>
         </div>
         <div class="process__steps">
-          <div class="process__step">
+          <div class="process__step" scrolls scrolls-anim="fade-right">
             <div class="process__step__wrapper">
               <h3 class="process__step__number text--gradient">1</h3>
               <img src="/src/assets/images/joystick.png" alt="contact" />
@@ -320,6 +340,11 @@
           </div>
         </div>
       </section>
+      <section class="images container">
+        <img src="src/assets/images/worldCollapse.png" alt="image1" />
+        <img src="src/assets/images/falseProphet.png" alt="image2" />
+        <img src="src/assets/images/signal.png" alt="image3" />
+      </section>
       <section class="yt-video">
         <div class="yt-video__wrapper">
           <h2>Zobacz sam</h2>
@@ -330,6 +355,130 @@
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
             allowfullscreen
           ></iframe>
+        </div>
+      </section>
+      <section id="team" class="team container">
+        <div class="team__title">
+          <h2>Kim Jesteśmy</h2>
+        </div>
+        <div class="team__description">
+          <p>
+            Nasze studio zostało założone w 2020 roku, w Krakowie przez
+            <span class="bold"
+              >Tomasza Wacławka - doświadczonego dewelopera</span
+            >
+            z takimi produkcjami na koncie jak Ronin (2015), Immortal Planet
+            (2017), czy Door in the Woods (2019). Lata doświadczenia zebrane
+            przy tworzeniu gier z gatunku Indie zaowocowały pomysłem na
+            założenie Spacewalkers. Jesteśmy grupą zapalonych graczy pracujących
+            nad serią gier osadzonych w świecie
+            <span class="bold"
+              >Interregnum - wykreowanym przez Przemysława Kardę w
+              bestsellerowej powieści science-fiction.</span
+            >
+            Jest to alternatywna wizja naszego świata, gdzie Ziemia legła w
+            zgliszczach stając się polem zmagań pozaziemskich cywilizacji,
+            których potęga i cele wykraczają poza możliwości pojmowania
+            ludzkiego umysłu. W naszych grach stawiamy na głębię rozgrywki i
+            dojrzałą opowieść. Do tej pory wydaliśmy debiutancką grę
+            <span class="bold">Interregnum Chronicles: Signal (2021),</span>
+            która jest prologiem serii nad którą obecnie pracujemy.
+          </p>
+        </div>
+        <div class="team__items"></div>
+        <div class="button__wrapper">
+          <a href="https://spacewalkers.games/#team" target="_blank">
+            <button class="button">
+              <span>Dowiedz się więcej</span>
+            </button>
+          </a>
+        </div>
+      </section>
+      <section class="summary container">
+        <div class="summary__title">
+          <h1>
+            Dlaczego warto inwestować w
+            <span class="text--gradient">rynek gier?</span>
+          </h1>
+        </div>
+        <div class="summary__description">
+          <div class="summary__description__left">
+            <ul>
+              <li>
+                <h4 class="animated animated-1 fadeInLeft">
+                  <span class="text--gradient">1.</span> bardzo wysoki popyt na
+                  produkcję wideo
+                </h4>
+              </li>
+              <li>
+                <h4>
+                  <span class="text--gradient">2.</span> gry komputerowe są
+                  odporne na kryzys
+                </h4>
+              </li>
+              <li>
+                <h4>
+                  <span class="text--gradient">3.</span> po wyprodukowaniu gry,
+                  można sprzedawać dowolną ilość kopii
+                </h4>
+              </li>
+              <li>
+                <h4>
+                  <span class="text--gradient">4.</span> zarabiasz na każdej
+                  sprzedanej sztuce
+                </h4>
+              </li>
+            </ul>
+          </div>
+          <div class="summary__description__right">
+            <p>
+              Branża gamingowa zyskuje na popularności w zawrotnym tempie -
+              obecnie ma miejsce największy boom na gry w historii. Rynek gier
+              jest jednym z najbardziej zglobalizowanych i prężnie rozwijających
+              się rynków spośród wszystkich współczesnych branż, a produkcje
+              polskich studiów gier komputerowych zdobyły już uznanie na skalę
+              światową.
+            </p>
+          </div>
+        </div>
+        <div class="summary__footer">
+          <div class="summary__footer__top">
+            <h2>
+              Zobacz jak bezpiecznie
+              <span class="text--gradient"
+                >zainwestować w branżę gamingową.</span
+              >
+            </h2>
+
+            <a href="#invest">
+              <button class="button">
+                <span>Chcę wiedzieć więcej</span>
+              </button>
+            </a>
+          </div>
+        </div>
+        <div class="summary__footer__wrapper">
+          <div class="summary__footer__left">
+            <p>
+              Każdego roku przychody z sektora gier w Polsce odnotowują
+              <span class="bold">stały wzrost o niemal 30%</span> - w samym 2019
+              roku przekroczyły one 2,2 mld zł! Stale rosnący przychód, a także
+              rosnąca rozpoznawalność i renoma polskich producentów gier na
+              arenie światowej udowadniają, że rynek produkcji gier w Polsce
+              jest rynkiem przyszłości. Zainwestuj razem z nami!
+            </p>
+          </div>
+          <div class="summary__footer__right">
+            <div>
+              <img src="/src/assets/images/cash.png" alt="cash" />
+              <h4>Dołącz do grona naszych inwestorów.</h4>
+              <a href="#invest">
+                <button class="button">
+                  <span>Wypełnij formularz</span>
+                </button>
+              </a>
+            </div>
+          </div>
         </div>
       </section>
     </main>
@@ -350,7 +499,7 @@
       </div>
     </footer>
     <script>
-      AOS.init();
+      AOS.init({ disable: 'mobile' });
     </script>
   </body>
 </html>

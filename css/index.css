@@ -72,7 +72,7 @@ h6 {
 }
 
 h1 {
-  font-size: 65px;
+  font-size: 50px;
 }
 @media screen and (min-width: 1010px) {
   h1 {
@@ -91,7 +91,7 @@ h1 {
 }
 
 h2 {
-  font-size: 50px;
+  font-size: 35px;
 }
 @media screen and (min-width: 1010px) {
   h2 {
@@ -245,6 +245,178 @@ menu {
   text-align: left;
 }
 
+/*
+*  ============================
+*    [team section] 
+*  ============================
+*/
+.team {
+  width: auto;
+  margin-top: 100px;
+}
+.team__title, .team__description {
+  text-align: center;
+}
+.team__items {
+  margin-top: 50px;
+}
+.team__item {
+  transition: all 0.3s ease-in-out;
+}
+.team__item__title {
+  position: relative;
+  top: 25px;
+  font-family: "Anton-Regular", sans-serif;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  font-size: 68px;
+  line-height: 100px;
+  -webkit-text-stroke: 1px rgba(255, 255, 255, 0.35);
+  -webkit-text-fill-color: transparent;
+  z-index: 4;
+}
+.team__item__image {
+  position: relative;
+  display: flex;
+  justify-content: flex-end;
+  z-index: 2;
+}
+.team__item__image img {
+  max-width: 100%;
+  width: 65%;
+  height: auto;
+  opacity: 1;
+}
+.team__item__text {
+  position: relative;
+  z-index: 5;
+  max-width: 285px;
+  margin-top: -50px;
+}
+.team__item__text h3 {
+  margin-bottom: 8px;
+}
+.team__item__text p {
+  font-size: 16px;
+  opacity: 1;
+}
+.team__item:hover .team__item__title {
+  background: radial-gradient(96.96% 142.96% at 49.39% 26.08%, #61e7ff 0%, #858bff 46.27%, #ffffff 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.team__item:hover .decor {
+  animation: shake-animation 4.72s ease infinite;
+  transform-origin: 50% 50%;
+  color: #61e7ff;
+}
+.team__item .decor {
+  color: #858bff;
+}
+
+@media screen and (min-width: 480px) {
+  .team__item {
+    margin-bottom: 50px;
+  }
+  .team__item__image img {
+    width: 50%;
+  }
+  .team__item__text {
+    margin-top: -90px;
+  }
+}
+@media screen and (min-width: 768px) {
+  .team__item__title {
+    font-size: 65px;
+  }
+  .team__item__text {
+    margin-top: -120px;
+  }
+  .team__item__text h3 {
+    font-size: 38px;
+  }
+
+  .team__items {
+    display: grid;
+    grid-gap: 1rem;
+    grid-template-columns: repeat(auto-fill, minmax(18rem, 1fr));
+    justify-items: center;
+    overflow: hidden;
+    max-height: none;
+  }
+}
+@media screen and (min-width: 1010px) {
+  .team {
+    min-height: 700px;
+  }
+  .team__text {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 50px;
+  }
+  .team__text__wrapper {
+    width: 50%;
+  }
+  .team__items {
+    display: grid;
+    grid-gap: 1rem;
+    grid-template-columns: repeat(auto-fill, minmax(28rem, 1fr));
+    justify-items: center;
+    overflow: hidden;
+    max-height: none;
+  }
+  .team__item {
+    width: 90%;
+  }
+  .team__item__title {
+    font-size: 70px;
+  }
+  .team__item__image img {
+    width: 45%;
+    max-width: 200px;
+  }
+  .team__item__text {
+    margin-top: -95px;
+    max-width: 340px;
+  }
+  .team__item__text h3 {
+    font-size: 28px;
+  }
+  .team__item__text p {
+    font-size: 14px;
+    line-height: 20px;
+    padding-top: 20px;
+  }
+}
+@media screen and (min-width: 1210px) {
+  .team__items {
+    max-width: 1050px;
+    margin: 0 auto;
+    grid-template-columns: repeat(auto-fill, minmax(28rem, 1fr));
+  }
+  .team__item__title {
+    font-size: 53px;
+  }
+  .team__item__text {
+    margin-top: -73px;
+  }
+  .team__item__text p {
+    padding-top: 0px;
+  }
+}
+@media screen and (min-width: 1532px) {
+  .team {
+    margin-bottom: -100px;
+  }
+  .team__items {
+    max-width: 1585px;
+    grid-template-columns: repeat(auto-fill, minmax(20rem, 1fr));
+  }
+  .team .decor {
+    margin-bottom: 20px;
+  }
+}
 body,
 html {
   width: 100%;
@@ -252,7 +424,7 @@ html {
   margin: 0;
   padding: 0;
   font-family: "Nexa", sans-serif;
-  overflow-x: hidden;
+  overflow-x: auto;
   color: white;
   scroll-behavior: smooth;
   background-image: url(/src/assets/images/page-background.jpg);
@@ -402,9 +574,6 @@ button:hover {
 .contact__text {
   margin-top: 50px;
 }
-.contact__text-left {
-  text-align: center;
-}
 .contact__text-right {
   margin-top: 50px;
 }
@@ -433,10 +602,13 @@ button:hover {
   min-height: 200px;
   max-width: 500px;
   border-radius: 20px;
-  background-color: white;
+  background-color: transparent;
   border: 4px solid #61e7ff;
   padding: 30px;
   margin-bottom: 30px;
+}
+.process__step img {
+  width: 64px;
 }
 .process__step:hover {
   box-shadow: rgb(78, 229, 255) 0px 7px 29px 0px;
@@ -452,7 +624,7 @@ button:hover {
 }
 .process__step__description p {
   margin-top: 0;
-  color: black;
+  color: white;
   opacity: 1;
   font-weight: bold;
 }
@@ -526,55 +698,15 @@ button:hover {
   height: 200px;
 }
 
-.instructions {
-  position: relative;
+.images {
   display: flex;
+  justify-content: space-between;
   align-items: center;
-  justify-content: flex-end;
+  margin: 100px auto;
   width: 100%;
-  height: 100%;
-  z-index: 4;
 }
-.instructions::before {
-  content: "";
-  position: absolute;
-  background-image: url(/src/assets/images/image3.png);
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-size: 153% auto;
-  background-position: center 8%;
-  background-repeat: no-repeat;
-  z-index: -1;
-}
-.instructions form {
-  z-index: 10;
-}
-
-.instructions__text {
-  display: flex;
-  align-items: center;
-  flex-direction: column;
-  margin-top: -145px;
-}
-
-.instructions__text-left {
-  width: 100%;
-  text-align: center;
-}
-
-.instructions__text-right {
-  width: 100%;
-  background-color: #020d42;
-  padding: 20px 50%;
-  margin-top: 300px;
-}
-.instructions__text-right h2 {
-  padding: 0 10%;
-}
-.instructions__text-right form {
-  padding: 0 10%;
+.images img {
+  width: 30%;
 }
 
 input,
@@ -698,6 +830,109 @@ textarea {
   width: 100%;
 }
 
+.summary {
+  margin-top: 120px;
+  margin-bottom: 100px;
+}
+.summary__title {
+  text-align: center;
+}
+.summary__description {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.summary__description p {
+  overflow: hidden;
+  /* Ensures the content is not revealed until the animation */
+  border-right: 0.15em solid #858bff;
+  /* The typwriter cursor */
+  margin: 0 auto;
+  /* Gives that scrolling effect as the typing happens */
+  letter-spacing: 0.15em;
+  /* Adjust as needed */
+  font-size: 16px;
+  animation: typing 5s steps(40, end), blink-caret 1s step-end infinite;
+}
+.summary__description__right {
+  padding-top: 25px;
+}
+.summary__footer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.summary__footer__top {
+  text-align: center;
+}
+.summary__footer__right > div {
+  margin: 0 auto;
+  text-align: center;
+  width: 300px;
+}
+.summary__footer__right > div h4 {
+  margin: 0 10px;
+}
+.summary__footer__right > div button {
+  width: 100%;
+}
+
+@keyframes typing {
+  from {
+    width: 0;
+  }
+  to {
+    width: 100%;
+  }
+}
+/* The typewriter cursor effect */
+@keyframes blink-caret {
+  from, to {
+    border-color: transparent;
+  }
+  50% {
+    border-color: #858bff;
+  }
+}
+.animated {
+  background-image: url(/css/images/logo.png);
+  background-repeat: no-repeat;
+  background-position: left top;
+  margin-bottom: 60px;
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both;
+}
+
+.aniamted-1 {
+  -webkit-animation-duration: 5s;
+  animation-duration: 5s;
+}
+
+@-webkit-keyframes fadeInLeft {
+  0% {
+    opacity: 0;
+    -webkit-transform: translateX(-20px);
+  }
+  100% {
+    opacity: 1;
+    -webkit-transform: translateX(0);
+  }
+}
+@keyframes fadeInLeft {
+  0% {
+    opacity: 0;
+    transform: translateX(-20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+.fadeInLeft {
+  -webkit-animation-name: fadeInLeft;
+  animation-name: fadeInLeft;
+}
+
 .footer {
   display: flex;
   flex-direction: column;
@@ -791,7 +1026,7 @@ html {
     padding: 0;
     margin-top: 0;
     background-color: transparent;
-    zoom: 0.65;
+    zoom: 0.72;
   }
   .contact .contact__text-right h2,
 .contact .contact__text-right form {
@@ -799,6 +1034,37 @@ html {
   }
   .contact .button-full {
     width: 100%;
+  }
+
+  .summary__description {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-start;
+  }
+  .summary__description__left, .summary__description__right {
+    width: 40%;
+  }
+  .summary__description__right img {
+    width: 100%;
+    height: auto;
+  }
+  .summary__footer {
+    margin-top: 100px;
+  }
+  .summary__footer__top {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .summary__footer__wrapper {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-top: 100px;
+  }
+  .summary__footer__left, .summary__footer__right {
+    width: 40%;
   }
 
   .footer {
@@ -809,11 +1075,6 @@ html {
 
   .footer__adress {
     margin-right: 10px;
-  }
-}
-@media screen and (min-width: 1366px) {
-  .benefits {
-    height: 950px;
   }
 }
 @media screen and (min-width: 1440px) {
@@ -839,32 +1100,97 @@ html {
   .process__step__number {
     font-size: 55px;
   }
-
-  .instructions {
-    height: 1300px;
-  }
-
-  .instructions__text-right {
-    width: 35%;
-  }
 }
 @media screen and (min-width: 1600px) {
   .button-full {
     width: 326px;
   }
 }
-@media screen and (min-width: 1920px) {
-  .benefits {
-    height: 1100px;
-  }
-
-  .instructions {
-    height: 1320px;
-    margin-top: -350px;
-  }
+/*! locomotive-scroll v4.1.3 | MIT License | https://github.com/locomotivemtl/locomotive-scroll */
+html.has-scroll-smooth {
+  overflow: hidden;
 }
-@media screen and (min-width: 2560px) {
-  .benefits {
-    height: 1300px;
-  }
+
+html.has-scroll-dragging {
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.has-scroll-smooth body {
+  overflow: hidden;
+}
+
+.has-scroll-smooth [data-scroll-container] {
+  min-height: 100vh;
+}
+
+[data-scroll-direction=horizontal] [data-scroll-container] {
+  height: 100vh;
+  display: inline-block;
+  white-space: nowrap;
+}
+
+[data-scroll-direction=horizontal] [data-scroll-section] {
+  display: inline-block;
+  vertical-align: top;
+  white-space: nowrap;
+  height: 100%;
+}
+
+.c-scrollbar {
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 11px;
+  height: 100%;
+  transform-origin: center right;
+  transition: transform 0.3s, opacity 0.3s;
+  opacity: 0;
+}
+
+.c-scrollbar:hover {
+  transform: scaleX(1.45);
+}
+
+.c-scrollbar:hover,
+.has-scroll-scrolling .c-scrollbar,
+.has-scroll-dragging .c-scrollbar {
+  opacity: 1;
+}
+
+[data-scroll-direction=horizontal] .c-scrollbar {
+  width: 100%;
+  height: 10px;
+  top: auto;
+  bottom: 0;
+  transform: scaleY(1);
+}
+
+[data-scroll-direction=horizontal] .c-scrollbar:hover {
+  transform: scaleY(1.3);
+}
+
+.c-scrollbar_thumb {
+  position: absolute;
+  top: 0;
+  right: 0;
+  background-color: black;
+  opacity: 0.5;
+  width: 7px;
+  border-radius: 10px;
+  margin: 2px;
+  cursor: -webkit-grab;
+  cursor: grab;
+}
+
+.has-scroll-dragging .c-scrollbar_thumb {
+  cursor: -webkit-grabbing;
+  cursor: grabbing;
+}
+
+[data-scroll-direction=horizontal] .c-scrollbar_thumb {
+  right: auto;
+  bottom: 0;
 }/*# sourceMappingURL=index.css.map */
