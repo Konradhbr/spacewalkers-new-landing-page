@@ -1036,26 +1036,11 @@ html {
     left: 0;
     width: 100%;
     height: 100%;
-    background-image: url(/src/assets/images/fist.png);
+    background-image: url(/src/assets/images/city.png);
     background-repeat: no-repeat;
-    background-position: bottom right;
+    background-position: bottom center;
     background-size: contain;
     z-index: -3;
-    max-height: 350px;
-  }
-  .process#invest-process .process__steps::after {
-    content: "";
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-image: url(/src/assets/images/storm_2.png);
-    background-repeat: no-repeat;
-    background-position: bottom left;
-    background-size: contain;
-    z-index: -3;
-    max-height: 350px;
   }
   .process.whyinvest .process__step {
     min-height: 300px;
