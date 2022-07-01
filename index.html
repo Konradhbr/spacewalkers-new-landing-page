@@ -6,26 +6,63 @@
     <title>Spacewalkers landing page</title>
 
     <link rel="stylesheet" href="./css/index.css" />
-    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+    <!-- <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
     <link />
-    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-    <script src="./scrolls.min.js"></script>
-    <script src="locomotive-scroll.min.js"></script>
-    <script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script> -->
+    <!-- <script>
       (function () {
         var scroll = new LocomotiveScroll({
           el: document.querySelector('[data-scroll-container]'),
           smooth: true,
         });
       })();
+    </script> -->
+    <!-- <script type="text/javascript">
+      (function () {
+        emailjs.init('-P7w8I0AdP7N07z_L');
+      })();
+    </script> -->
+    <!-- <script src="https://unpkg.com/axios/dist/axios.min.js"></script> -->
+    <script
+      type="text/javascript"
+      src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"
+    ></script>
+    <script type="text/javascript">
+      (function () {
+        emailjs.init('k5oAMmOdlHE2XUISc');
+      })();
     </script>
-    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels@0.7.0"></script>
+    <!-- 
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.3/Chart.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels"></script> -->
+
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="./src/js/index.js"></script>
   </head>
 
   <body>
     <header id="invest" class="header container">
+      <div class="alert" id="alert">
+        <span
+          class="closebtn"
+          onclick="this.parentElement.style.display='none';"
+          >&times;</span
+        >
+        <strong>Formularz został wysłany.</strong> Dziękujemy za okazane
+        zaufanie. Skontaktujemy się z Tobą w wybranym przez Ciebie terminie i
+        przedziale czasowym. W czasie kiedy oczekujesz na nasz telefon, możesz
+        pobrać naszą grę
+        <a
+          style="all: revert"
+          href="https://www.spacewalkers.pl/spacewalkers.zip"
+          >https://store.steampowered.com/app/1640710/Interregnum_Chronicles_Signal/</a
+        >
+        lub dowiedzieć się o nas więcej na
+        <a style="all: revert" href="spacewalkers.games">spacewalkers.games</a>.
+        Do usłyszenia!
+      </div>
       <nav class="nav-menu">
         <div class="logo">
           <a href="#"
@@ -67,16 +104,12 @@
             </h4>
             <p>Zarabiaj z nami na grach!</p>
           </div>
-          <div id="form" class="contact__text-right">
+          <div class="contact__text-right">
             <h4>
               Wypełnij formularz
               <span class="text--gradient"> i dowiedz się więcej</span>
             </h4>
-            <form
-              action="https://tecra.space/api/spacewalkers/training"
-              method="POST"
-              @submit.prevent="sendForm"
-            >
+            <form onsubmit="getValues();return false" id="form">
               <div class="input-placeholder">
                 <input id="name" type="text" name="name" value required />
                 <div class="placeholder">Imię i nazwisko <span>*</span></div>
@@ -95,15 +128,24 @@
               </div>
               <br />
               <div class="input-placeholder">
-                <input id="email" type="email" name="email" required />
-                <div class="placeholder">Adres e-mail <span>*</span></div>
+                <input
+                  id="email"
+                  type="email"
+                  onkeypress="disappear()"
+                  name="email"
+                  value
+                  required
+                />
+                <div id="holderReq" class="placeholder">
+                  Adres e-mail <span>*</span>
+                </div>
               </div>
               <br />
               <div class="input-placeholder-wrapper">
                 <div class="input-placeholder">
                   <label for="day">Preferowany dzień i godzina kontaktu</label>
                   <select id="day" type="text" name="day" value required>
-                    <option value="poniedzialek">Poniedziałek</option>
+                    <option value="poniedzialek" selected>Poniedziałek</option>
                     <option value="wtorek">Wtorek</option>
                     <option value="sroda">Środa</option>
                     <option value="czwartek">Czwartek</option>
@@ -113,7 +155,7 @@
                 </div>
                 <div class="input-placeholder">
                   <select id="time" type="text" name="time" value required>
-                    <option value="8:00-11:00">8:00-11:00</option>
+                    <option value="8:00-11:00" selected>8:00-11:00</option>
                     <option value="12:00-15:00">11:00-14:00</option>
                     <option value="16:00-19:00">14:00-17:00</option>
                     <option value="20:00-21:00">17:00-21:00</option>
@@ -405,7 +447,7 @@
           <div class="summary__description__left">
             <ul>
               <li>
-                <h4 class="animated animated-1 fadeInLeft">
+                <h4>
                   <span class="text--gradient">1.</span> bardzo wysoki popyt na
                   produkcję wideo
                 </h4>
@@ -457,6 +499,33 @@
             </a>
           </div>
         </div>
+        <div class="chart__wrapper">
+          <div class="chart__element">
+            <div class="chart__inner">
+              <h4 class="chart__title">
+                Wykres orzedstawiający globalnych wydawców gier wywodzących sięz
+                Polski.
+              </h4>
+              <canvas id="chart1"></canvas>
+              <p class="chart__source">
+                Żródło: Game Industry Conference, Gaming Analytics.info.
+              </p>
+            </div>
+          </div>
+          <div class="chart__element">
+            <div class="chart__inner">
+              <h4 class="chart__title">
+                Przedstawienie podstawowych platform deklarowanych przez
+                polskich programistów.
+              </h4>
+              <canvas id="chart2"></canvas>
+              <p class="chart__source">
+                Żródło: Game Industry Conference, Gaming Analytics.info
+              </p>
+            </div>
+          </div>
+        </div>
+
         <div class="summary__footer__wrapper">
           <div class="summary__footer__left">
             <p>
@@ -498,8 +567,154 @@
         <p>mail: <span class="orange">hello@spacewalkers.games</span></p>
       </div>
     </footer>
-    <script>
-      AOS.init({ disable: 'mobile' });
-    </script>
   </body>
+  <!-- <script>
+    let ctx = document.getElementById('myChart').getContext('2d');
+    let labels = ['Pizza 🍕', 'Taco 🌮', 'Hot Dog 🌭', 'Sushi 🍣'];
+    let colorHex = ['#FB3640', '#EFCA08', '#43AA8B', '#253D5B'];
+
+    let myChart = new Chart(ctx, {
+      type: 'pie',
+      data: {
+        datasets: [
+          {
+            data: [30, 10, 40, 20],
+            backgroundColor: colorHex,
+          },
+        ],
+        labels: labels,
+      },
+      options: {
+        responsive: true,
+        legend: {
+          position: 'bottom',
+        },
+        plugins: {
+          labels: {
+            render: 'percentage',
+          },
+          datalabels: {
+            color: '#fff',
+            anchor: 'end',
+            align: 'start',
+            borderWidth: 2,
+            borderColor: '#fff',
+            borderRadius: 25,
+            font: {
+              weight: 'bold',
+              size: '10',
+            },
+            formatter: (value) => {
+              return value + ' %';
+            },
+          },
+        },
+      },
+    });
+  </script> -->
+  <script>
+    // -----------------------------CHARTS----------------------------------------
+
+    const barChartData = {
+      labels: ['2016', '2017', '2018', '2019', '2020'],
+      datasets: [
+        {
+          type: 'bar',
+          label: 'Liczba wydawców',
+          data: [13, 17, 25, 37, 44],
+          borderColor: 'rgba(255,255,255, 0.9)',
+          backgroundColor: 'rgba(255, 99, 132, 1)',
+        },
+      ],
+    };
+
+    const douhgnutChartData = {
+      labels: [
+        'PC',
+        'PC i Konsole',
+        'Konsole',
+        'VR/AR',
+        'VR/AR i Mobilne',
+        'Mobilne',
+        'Nintendo Switch',
+        'Nintendo Switch i Mobile',
+        'PC i Nintendo',
+      ],
+      datasets: [
+        {
+          label: 'Platformy',
+          data: [53.6, 17.3, 1.8, 5.4, 0.9, 11.8, 11.8, 0.9, 0.9],
+          backgroundColor: [
+            'rgb(255, 99, 132)',
+            'rgb(54, 162, 235)',
+            'rgb(255, 255, 296)',
+            'rgb(75, 192, 192)',
+            'rgb(153, 102, 255)',
+            'rgb(255, 159, 64)',
+            'rgb(255, 99, 182)',
+            'rgb(54, 162, 235)',
+            'rgb(255, 205, 86)',
+          ],
+          hoverOffset: 4,
+        },
+      ],
+    };
+
+    const barChartConfig = {
+      type: 'scatter',
+      data: barChartData,
+      options: {
+        defaultFontColor: '#fff',
+        responsive: true,
+        scales: {
+          y: {
+            ticks: { color: 'white', beginAtZero: true },
+          },
+        },
+        legend: {
+          labels: {
+            fontColor: '#ffffff',
+          },
+        },
+      },
+    };
+
+    const douhgnutChartConfig = {
+      type: 'doughnut',
+      data: douhgnutChartData,
+      plugins: {
+        tooltip: {
+          callbacks: {
+            label: (tooltipItem) => {
+              //tooltipItem is for the slice of the pie you are hovering now
+              return ' ' + tooltipItem.parsed + '%';
+            },
+          },
+        },
+      },
+      scales: {
+        y: {
+          ticks: {
+            // Include a dollar sign in the ticks
+            callback: function (value, index, ticks) {
+              return (
+                '$' +
+                Chart.Ticks.formatters.numeric.apply(this, [
+                  value,
+                  index,
+                  ticks,
+                ])
+              );
+            },
+          },
+        },
+      },
+    };
+
+    const chart1 = new Chart(document.getElementById('chart1'), barChartConfig);
+    const chart2 = new Chart(
+      document.getElementById('chart2'),
+      douhgnutChartConfig
+    );
+  </script>
 </html>

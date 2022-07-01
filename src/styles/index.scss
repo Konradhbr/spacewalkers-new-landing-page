@@ -178,8 +178,47 @@ button {
   margin-top: 380px;
 }
 
+.alert {
+  display: none;
+  padding: 20px;
+  background-color: green;
+  color: white;
+  transition: all 0.2s ease-in-out;
+}
+
+.closebtn {
+  margin-left: 15px;
+  color: white;
+  font-weight: bold;
+  float: right;
+  font-size: 22px;
+  line-height: 20px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.closebtn:hover {
+  color: black;
+}
+
 // -------------------CONTACT -------------------------------------------------------
 .contact {
+  position: relative;
+  z-index: 10;
+
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url(/src/assets/images/man_1.png);
+    background-repeat: no-repeat;
+    background-position: 50% top;
+    background-size: contain;
+    z-index: -3;
+  }
   &__text {
     margin-top: 50px;
     // z-index: 3;
@@ -277,6 +316,38 @@ button {
         flex-direction: column;
         align-items: center;
         flex-wrap: nowrap;
+        position: relative;
+        z-index: 10;
+
+        &::before {
+          content: '';
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+          background-image: url(/src/assets/images/man_3.png);
+          background-repeat: no-repeat;
+          background-position: top right;
+          background-size: contain;
+          max-height: 1000px;
+          z-index: -3;
+        }
+
+        &::after {
+          content: '';
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+          background-image: url(/src/assets/images/man.png);
+          background-repeat: no-repeat;
+          background-position: 50% center;
+          background-position: bottom center;
+          background-size: 28%;
+          z-index: -3;
+        }
       }
 
       &__step {
@@ -488,7 +559,9 @@ textarea {
   }
 
   a {
+    font-family: 'OpenSans-Light', sans-serif;
     color: white;
+    font-weight: bold;
   }
 }
 
@@ -572,66 +645,27 @@ textarea {
   }
 }
 
-@keyframes typing {
-  from {
-    width: 0;
+.chart {
+  &__wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    margin-top: 50px;
+    margin-bottom: 50px;
   }
-  to {
+
+  &__element {
     width: 100%;
   }
-}
 
-/* The typewriter cursor effect */
-@keyframes blink-caret {
-  from,
-  to {
-    border-color: transparent;
+  &__inner {
+    margin: 0 auto;
+    width: 100%;
+    max-width: 500px;
   }
-  50% {
-    border-color: #858bff;
-  }
-}
-
-.animated {
-  background-image: url(/css/images/logo.png);
-  background-repeat: no-repeat;
-  background-position: left top;
-  //  padding-top: 95px;
-  margin-bottom: 60px;
-  -webkit-animation-fill-mode: both;
-  animation-fill-mode: both;
-}
-
-.aniamted-1 {
-  -webkit-animation-duration: 5s;
-  animation-duration: 5s;
-}
-
-@-webkit-keyframes fadeInLeft {
-  0% {
-    opacity: 0;
-    -webkit-transform: translateX(-20px);
-  }
-  100% {
-    opacity: 1;
-    -webkit-transform: translateX(0);
-  }
-}
-
-@keyframes fadeInLeft {
-  0% {
-    opacity: 0;
-    transform: translateX(-20px);
-  }
-  100% {
-    opacity: 1;
-    transform: translateX(0);
-  }
-}
-
-.fadeInLeft {
-  -webkit-animation-name: fadeInLeft;
-  animation-name: fadeInLeft;
 }
 
 //  ---------------------------FOOTER----------------------------------------------
@@ -701,6 +735,43 @@ textarea {
       min-height: 250px;
     }
 
+    &#invest-process {
+      .process__steps {
+        position: relative;
+        z-index: 10;
+
+        &::before {
+          content: '';
+          position: absolute;
+          bottom: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+          background-image: url(/src/assets/images/fist.png);
+          background-repeat: no-repeat;
+          background-position: bottom right;
+          background-size: contain;
+          z-index: -3;
+          max-height: 350px;
+        }
+
+        &::after {
+          content: '';
+          position: absolute;
+          bottom: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+          background-image: url(/src/assets/images/storm_2.png);
+          background-repeat: no-repeat;
+          background-position: bottom left;
+          background-size: contain;
+          z-index: -3;
+          max-height: 350px;
+        }
+      }
+    }
+
     &.whyinvest {
       .process {
         &__step {
@@ -749,12 +820,16 @@ textarea {
       }
     }
 
+    &__footer {
+      margin-top: 50px;
+    }
+
     .contact__text-right {
       width: 30%;
       padding: 0;
       margin-top: 0;
       background-color: transparent;
-      zoom: 0.72;
+      zoom: 0.65;
 
       h2,
       form {
@@ -806,6 +881,27 @@ textarea {
       &__right {
         width: 40%;
       }
+    }
+  }
+
+  .chart {
+    &__wrapper {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: space-between;
+      width: 100%;
+      height: 100%;
+      margin-top: 50px;
+      margin-bottom: 50px;
+    }
+
+    &__element {
+      width: 45%;
+    }
+
+    &__inner {
+      width: 100%;
     }
   }
   // ---------------------------------------FOOTER-----------------------------------------------
@@ -860,9 +956,19 @@ textarea {
 }
 
 @media screen and (min-width: 1920px) {
+  .chart {
+    &__inner {
+      max-width: 550px;
+    }
+  }
 }
 
 @media screen and (min-width: 2560px) {
+  .chart {
+    &__inner {
+      max-width: 650px;
+    }
+  }
 }
 
 /*! locomotive-scroll v4.1.3 | MIT License | https://github.com/locomotivemtl/locomotive-scroll */

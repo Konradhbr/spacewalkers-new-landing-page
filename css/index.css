@@ -571,6 +571,46 @@ button:hover {
   margin-top: 380px;
 }
 
+.alert {
+  display: none;
+  padding: 20px;
+  background-color: green;
+  color: white;
+  transition: all 0.2s ease-in-out;
+}
+
+.closebtn {
+  margin-left: 15px;
+  color: white;
+  font-weight: bold;
+  float: right;
+  font-size: 22px;
+  line-height: 20px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.closebtn:hover {
+  color: black;
+}
+
+.contact {
+  position: relative;
+  z-index: 10;
+}
+.contact::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url(/src/assets/images/man_1.png);
+  background-repeat: no-repeat;
+  background-position: 50% top;
+  background-size: contain;
+  z-index: -3;
+}
 .contact__text {
   margin-top: 50px;
 }
@@ -634,6 +674,36 @@ button:hover {
   flex-direction: column;
   align-items: center;
   flex-wrap: nowrap;
+  position: relative;
+  z-index: 10;
+}
+.process.whyinvest .process__steps::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url(/src/assets/images/man_3.png);
+  background-repeat: no-repeat;
+  background-position: top right;
+  background-size: contain;
+  max-height: 1000px;
+  z-index: -3;
+}
+.process.whyinvest .process__steps::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url(/src/assets/images/man.png);
+  background-repeat: no-repeat;
+  background-position: 50% center;
+  background-position: bottom center;
+  background-size: 28%;
+  z-index: -3;
 }
 .process.whyinvest .process__step {
   position: relative;
@@ -815,7 +885,9 @@ textarea {
   text-align: left;
 }
 .checkbox a {
+  font-family: "OpenSans-Light", sans-serif;
   color: white;
+  font-weight: bold;
 }
 
 .term-scroll {
@@ -877,60 +949,23 @@ textarea {
   width: 100%;
 }
 
-@keyframes typing {
-  from {
-    width: 0;
-  }
-  to {
-    width: 100%;
-  }
+.chart__wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  margin-top: 50px;
+  margin-bottom: 50px;
 }
-/* The typewriter cursor effect */
-@keyframes blink-caret {
-  from, to {
-    border-color: transparent;
-  }
-  50% {
-    border-color: #858bff;
-  }
+.chart__element {
+  width: 100%;
 }
-.animated {
-  background-image: url(/css/images/logo.png);
-  background-repeat: no-repeat;
-  background-position: left top;
-  margin-bottom: 60px;
-  -webkit-animation-fill-mode: both;
-  animation-fill-mode: both;
-}
-
-.aniamted-1 {
-  -webkit-animation-duration: 5s;
-  animation-duration: 5s;
-}
-
-@-webkit-keyframes fadeInLeft {
-  0% {
-    opacity: 0;
-    -webkit-transform: translateX(-20px);
-  }
-  100% {
-    opacity: 1;
-    -webkit-transform: translateX(0);
-  }
-}
-@keyframes fadeInLeft {
-  0% {
-    opacity: 0;
-    transform: translateX(-20px);
-  }
-  100% {
-    opacity: 1;
-    transform: translateX(0);
-  }
-}
-.fadeInLeft {
-  -webkit-animation-name: fadeInLeft;
-  animation-name: fadeInLeft;
+.chart__inner {
+  margin: 0 auto;
+  width: 100%;
+  max-width: 500px;
 }
 
 .footer {
@@ -989,6 +1024,38 @@ html {
     margin: 0 15px 30px 15px;
     min-height: 250px;
   }
+  .process#invest-process .process__steps {
+    position: relative;
+    z-index: 10;
+  }
+  .process#invest-process .process__steps::before {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url(/src/assets/images/fist.png);
+    background-repeat: no-repeat;
+    background-position: bottom right;
+    background-size: contain;
+    z-index: -3;
+    max-height: 350px;
+  }
+  .process#invest-process .process__steps::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url(/src/assets/images/storm_2.png);
+    background-repeat: no-repeat;
+    background-position: bottom left;
+    background-size: contain;
+    z-index: -3;
+    max-height: 350px;
+  }
   .process.whyinvest .process__step {
     min-height: 300px;
     margin-bottom: 30px;
@@ -1021,12 +1088,15 @@ html {
 .contact .contact__text-left h4 {
     margin: 0;
   }
+  .contact__footer {
+    margin-top: 50px;
+  }
   .contact .contact__text-right {
     width: 30%;
     padding: 0;
     margin-top: 0;
     background-color: transparent;
-    zoom: 0.72;
+    zoom: 0.65;
   }
   .contact .contact__text-right h2,
 .contact .contact__text-right form {
@@ -1067,6 +1137,23 @@ html {
     width: 40%;
   }
 
+  .chart__wrapper {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    height: 100%;
+    margin-top: 50px;
+    margin-bottom: 50px;
+  }
+  .chart__element {
+    width: 45%;
+  }
+  .chart__inner {
+    width: 100%;
+  }
+
   .footer {
     flex-direction: row;
     justify-content: space-between;
@@ -1104,6 +1191,16 @@ html {
 @media screen and (min-width: 1600px) {
   .button-full {
     width: 326px;
+  }
+}
+@media screen and (min-width: 1920px) {
+  .chart__inner {
+    max-width: 550px;
+  }
+}
+@media screen and (min-width: 2560px) {
+  .chart__inner {
+    max-width: 650px;
   }
 }
 /*! locomotive-scroll v4.1.3 | MIT License | https://github.com/locomotivemtl/locomotive-scroll */
