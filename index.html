@@ -509,7 +509,9 @@
                 polskich programistów.
               </h4>
               <canvas id="pie-chart" width="300" height="300"></canvas>
-              <p class="chart__source"></p>
+              <p class="chart__source">
+                Żródło: Game Industry Conference, Gaming Analytics.info.
+              </p>
             </div>
           </div>
         </div>
@@ -558,7 +560,7 @@
   <script>
     var dataPieChart = [
       {
-        data: [53.6, 17.3, 1.8, 5.4, 0.9, 11.8, 11.8, 0.9, 0.9],
+        data: [53.6, 17.4, 1.8, 4.5, 0.9, 10, 0.9, 10, 0.9],
         backgroundColor: [
           'rgb(255, 99, 132)',
           'rgb(54, 162, 235)',
@@ -577,15 +579,31 @@
     var optionsPieChart = {
       tooltips: {
         enabled: true,
+        callbacks: {
+          label: function (tooltipItem, data) {
+            var dataset = data.datasets[tooltipItem.datasetIndex];
+            var total = dataset.data.reduce(function (
+              previousValue,
+              currentValue,
+              currentIndex,
+              array
+            ) {
+              return previousValue + currentValue;
+            });
+            var currentValue = dataset.data[tooltipItem.index];
+            var precentage = ((currentValue * 100) / total).toFixed(1);
+            return precentage + '%';
+          },
+        },
       },
       plugins: {
         datalabels: {
           formatter: (value, ctx) => {
-            if (value < 5) {
+            if (value < 4) {
               return '';
             } else {
               let sum = ctx.dataset._meta[0].total;
-              let percentage = ((value * 100) / sum).toFixed(2) + '%';
+              let percentage = ((value * 100) / sum).toFixed(1) + '%';
               return percentage;
             }
           },
@@ -661,9 +679,9 @@
           'VR/AR',
           'VR/AR i Mobilne',
           'Mobilne',
-          'Nintendo Switch',
           'Nintendo Switch i Mobile',
-          'PC i Nintendo',
+          'Nintendo Switch',
+          'PC i Nintendo Switch',
         ],
         datasets: dataPieChart,
       },
