@@ -69,7 +69,7 @@
             </h4>
             <p>
               Przedstawimy Ci kilka opcji na zainwestowanie w branżę gamingową i
-              nasze studio - Spacewalkers Games.
+              nasze studio - <span class="bold">Spacewalkers Games.</span>
             </p>
             <p style="margin-top: 0px">
               Stworzyliśmy i wypuściliśmy w świat 1 grę, a pracujemy nad 3
@@ -222,7 +222,8 @@
           <div class="process__step">
             <div class="process__step__wrapper">
               <h3 class="process__step__number">1</h3>
-              <img src="/src/assets/images/contact.svg" alt="contact" />
+              <!-- <img src="/src/assets/images/contact.svg" alt="contact" /> -->
+              <img src="/src/assets/images/2.png" alt="contact" />
             </div>
             <div class="process__step__description">
               <p>
@@ -234,7 +235,8 @@
           <div class="process__step">
             <div class="process__step__wrapper">
               <h3 class="process__step__number">2</h3>
-              <img src="/src/assets/images/access.svg" alt="access" />
+              <!-- <img src="/src/assets/images/access.svg" alt="access" /> -->
+              <img src="/src/assets/images/3.png" alt="access" />
             </div>
             <div class="process__step__description">
               <p>
@@ -248,7 +250,8 @@
           <div class="process__step">
             <div class="process__step__wrapper">
               <h3 class="process__step__number">3</h3>
-              <img src="/src/assets/images/invest.svg" alt="invest" />
+              <!-- <img src="/src/assets/images/invest.svg" alt="invest" /> -->
+              <img src="/src/assets/images/4.png" alt="invest" />
             </div>
             <div class="process__step__description">
               <p>
@@ -260,7 +263,8 @@
           <div class="process__step">
             <div class="process__step__wrapper">
               <h3 class="process__step__number">4</h3>
-              <img src="/src/assets/images/information.svg" alt="information" />
+              <!-- <img src="/src/assets/images/information.svg" alt="information" /> -->
+              <img src="/src/assets/images/5.png" alt="information" />
             </div>
             <div class="process__step__description">
               <p>
@@ -272,7 +276,8 @@
           <div class="process__step">
             <div class="process__step__wrapper">
               <h3 class="process__step__number">5</h3>
-              <img src="/src/assets/images/earn.svg" alt="earn" />
+              <!-- <img src="/src/assets/images/earn.svg" alt="earn" /> -->
+              <img src="/src/assets/images/1.png" alt="earn" />
             </div>
             <div class="process__step__description">
               <p>Zaczynasz z nami zarabiać i oczywiście grasz w nasze gry ;)</p>
@@ -489,8 +494,7 @@
           <div class="chart__element">
             <div class="chart__inner">
               <h4 class="chart__title">
-                Wykres przedstawiający ilość globalnych wydawców gier
-                wywodzących się z Polski.
+                Wykres przedstawiający przychody twórców gier w Polsce.
               </h4>
               <canvas id="bar-chart"></canvas>
               <p class="chart__source">
@@ -594,8 +598,8 @@
       labels: ['2016', '2017', '2018', '2019', '2020'],
       datasets: [
         {
-          label: 'ilość wydawców',
-          data: [13, 17, 25, 37, 44],
+          label: 'Przychód (mln)',
+          data: [304, 324, 364, 479, 969],
           backgroundColor: [
             'rgba(255, 99, 132, 1)',
             'rgba(255, 99, 132, 1)',
@@ -616,6 +620,13 @@
         plugins: {
           datalabels: {
             display: false,
+          },
+        },
+        tooltips: {
+          callbacks: {
+            label: function (tooltipItems, data) {
+              return 'Przychód ' + tooltipItems.yLabel + ' mln \u20AC';
+            },
           },
         },
         scales: {

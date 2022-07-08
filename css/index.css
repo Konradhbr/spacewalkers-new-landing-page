@@ -642,7 +642,7 @@ button:hover {
   min-height: 200px;
   max-width: 500px;
   border-radius: 20px;
-  background-color: transparent;
+  background-color: white;
   border: 4px solid #61e7ff;
   padding: 30px;
   margin-bottom: 30px;
@@ -664,7 +664,7 @@ button:hover {
 }
 .process__step__description p {
   margin-top: 0;
-  color: white;
+  color: black;
   opacity: 1;
   font-weight: bold;
 }
@@ -1059,7 +1059,7 @@ html {
     margin-top: 0;
   }
   .contact .contact__text-left {
-    width: 50%;
+    width: 30%;
     display: flex;
     flex-direction: column;
     text-align: left;
@@ -1067,6 +1067,9 @@ html {
   .contact .contact__text-left h2,
 .contact .contact__text-left h4 {
     margin: 0;
+  }
+  .contact .contact__text-left h2 {
+    font-size: 30px;
   }
   .contact__footer {
     margin-top: 50px;
@@ -1182,8 +1185,8 @@ html {
   }
 
   h2 {
-    font-size: 50px;
-    line-height: 50px;
+    font-size: 55px !important;
+    line-height: 60px;
     font-weight: bold;
   }
 
