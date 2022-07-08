@@ -6,23 +6,6 @@
     <title>Spacewalkers landing page</title>
 
     <link rel="stylesheet" href="./css/index.css" />
-    <!-- <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
-    <link />
-    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script> -->
-    <!-- <script>
-      (function () {
-        var scroll = new LocomotiveScroll({
-          el: document.querySelector('[data-scroll-container]'),
-          smooth: true,
-        });
-      })();
-    </script> -->
-    <!-- <script type="text/javascript">
-      (function () {
-        emailjs.init('-P7w8I0AdP7N07z_L');
-      })();
-    </script> -->
-    <!-- <script src="https://unpkg.com/axios/dist/axios.min.js"></script> -->
     <script
       type="text/javascript"
       src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"
@@ -32,11 +15,8 @@
         emailjs.init('k5oAMmOdlHE2XUISc');
       })();
     </script>
-    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.2/Chart.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels@0.7.0"></script>
-
-    <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels"></script>
-
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="./src/js/index.js"></script>
   </head>
@@ -312,71 +292,78 @@
           <h2>Dlaczego miałbyś zainwestować?</h2>
         </div>
         <div class="process__steps">
-          <div class="process__step" scrolls scrolls-anim="fade-right">
-            <div class="process__step__wrapper">
-              <h3 class="process__step__number text--gradient">1</h3>
-              <img src="/src/assets/images/joystick.png" alt="contact" />
+          <div class="process__steps__wrapper--left">
+            <div class="process__step" scrolls scrolls-anim="fade-right">
+              <div class="process__step__wrapper">
+                <h3 class="process__step__number text--gradient">1</h3>
+                <img src="/src/assets/images/joystick.png" alt="contact" />
+              </div>
+              <div class="process__step__description">
+                <p>
+                  Bo wydaliśmy, póki co, 1 grę, pobraną tysiące razy. W planach
+                  są 3 kolejne, w tym jedna już na ukończeniu.
+                </p>
+              </div>
             </div>
-            <div class="process__step__description">
-              <p>
-                Bo wydaliśmy, póki co, 1 grę, pobraną tysiące razy. W planach są
-                3 kolejne, w tym jedna już na ukończeniu.
-              </p>
+
+            <div class="process__step">
+              <div class="process__step__wrapper">
+                <h3 class="process__step__number text--gradient">2</h3>
+                <img src="/src/assets/images/book.png" alt="invest" />
+              </div>
+              <div class="process__step__description">
+                <p>
+                  Bo nasze gry są na podstawie powieści Przemka Kardy, które
+                  sprzedały się już w dziesiątkach tysięcy egzemplarzy i są na
+                  liście bestsellerów Empiku (i nie tylko), a my mamy na nie
+                  wyłączność.
+                </p>
+              </div>
             </div>
-          </div>
-          <div class="process__step">
-            <div class="process__step__wrapper">
-              <h3 class="process__step__number text--gradient">2</h3>
-              <img src="/src/assets/images/3d-cube.png" alt="access" />
-            </div>
-            <div class="process__step__description">
-              <p>
-                Bo realizujemy właśnie innowacyjny projekt badawczy
-                „Inteligentny system kreacji map do gier 3D oparty na platformie
-                Unreal Engine wykorzystujący techniki uczenia maszynowego” o
-                łącznych kosztach 11 013 701,62 PLN.
-              </p>
-            </div>
-          </div>
-          <div class="process__step">
-            <div class="process__step__wrapper">
-              <h3 class="process__step__number text--gradient">3</h3>
-              <img src="/src/assets/images/book.png" alt="invest" />
-            </div>
-            <div class="process__step__description">
-              <p>
-                Bo nasze gry są na podstawie powieści Przemka Kardy, które
-                sprzedały się już w dziesiątkach tysięcy egzemplarzy i są na
-                liście bestsellerów Empiku (i nie tylko), a my mamy na nie
-                wyłączność.
-              </p>
-            </div>
-          </div>
-          <div class="process__step">
-            <div class="process__step__wrapper">
-              <h3 class="process__step__number text--gradient">4</h3>
-              <img src="/src/assets/images/people.png" alt="information" />
-            </div>
-            <div class="process__step__description">
-              <p>
-                Bo mamy dedykowany zespół ekspertów, którzy pomogą Ci w całym
-                procesie inwestycyjnym. Jesteśmy w stałym kontakcie i
-                przekazujemy Ci wciąż nowe informacje. Nie zostawiamy Cię samego
-                po zainwestowaniu. Pokażemy Ci jak Twoje pieniądze pracują.
-              </p>
+
+            <div class="process__step">
+              <div class="process__step__wrapper">
+                <h3 class="process__step__number text--gradient">3</h3>
+                <img src="/src/assets/images/24-hours.png" alt="earn" />
+              </div>
+              <div class="process__step__description">
+                <p>
+                  Bo nasz zespół ma na koncie wypracowanych kilka tysięcy godzin
+                  doświadczenia oraz stworzonych i wypuszczonych kilka całkiem
+                  niezłych gier.
+                </p>
+              </div>
             </div>
           </div>
-          <div class="process__step">
-            <div class="process__step__wrapper">
-              <h3 class="process__step__number text--gradient">5</h3>
-              <img src="/src/assets/images/24-hours.png" alt="earn" />
+          <div class="process__steps__wrapper--right">
+            <div class="process__step">
+              <div class="process__step__wrapper">
+                <h3 class="process__step__number text--gradient">4</h3>
+                <img src="/src/assets/images/3d-cube.png" alt="access" />
+              </div>
+              <div class="process__step__description">
+                <p>
+                  Bo realizujemy właśnie innowacyjny projekt badawczy
+                  „Inteligentny system kreacji map do gier 3D oparty na
+                  platformie Unreal Engine wykorzystujący techniki uczenia
+                  maszynowego” o łącznych kosztach 11 013 701,62 PLN.
+                </p>
+              </div>
             </div>
-            <div class="process__step__description">
-              <p>
-                Bo nasz zespół ma na koncie wypracowanych kilka tysięcy godzin
-                doświadczenia oraz stworzonych i wypuszczonych kilka całkiem
-                niezłych gier.
-              </p>
+            <div class="process__step">
+              <div class="process__step__wrapper">
+                <h3 class="process__step__number text--gradient">5</h3>
+                <img src="/src/assets/images/people.png" alt="information" />
+              </div>
+              <div class="process__step__description">
+                <p>
+                  Bo mamy dedykowany zespół ekspertów, którzy pomogą Ci w całym
+                  procesie inwestycyjnym. Jesteśmy w stałym kontakcie i
+                  przekazujemy Ci wciąż nowe informacje. Nie zostawiamy Cię
+                  samego po zainwestowaniu. Pokażemy Ci jak Twoje pieniądze
+                  pracują.
+                </p>
+              </div>
             </div>
           </div>
         </div>
@@ -502,10 +489,10 @@
           <div class="chart__element">
             <div class="chart__inner">
               <h4 class="chart__title">
-                Wykres orzedstawiający globalnych wydawców gier wywodzących sięz
-                Polski.
+                Wykres przedstawiający ilość globalnych wydawców gier
+                wywodzących się z Polski.
               </h4>
-              <canvas id="chart1"></canvas>
+              <canvas id="bar-chart"></canvas>
               <p class="chart__source">
                 Żródło: Game Industry Conference, Gaming Analytics.info.
               </p>
@@ -517,14 +504,11 @@
                 Przedstawienie podstawowych platform deklarowanych przez
                 polskich programistów.
               </h4>
-              <canvas id="chart2"></canvas>
-              <p class="chart__source">
-                Żródło: Game Industry Conference, Gaming Analytics.info
-              </p>
+              <canvas id="pie-chart" width="300" height="300"></canvas>
+              <p class="chart__source"></p>
             </div>
           </div>
         </div>
-
         <div class="summary__footer__wrapper">
           <div class="summary__footer__left">
             <p>
@@ -567,152 +551,153 @@
       </div>
     </footer>
   </body>
-  <!-- <script>
-    let ctx = document.getElementById('myChart').getContext('2d');
-    let labels = ['Pizza 🍕', 'Taco 🌮', 'Hot Dog 🌭', 'Sushi 🍣'];
-    let colorHex = ['#FB3640', '#EFCA08', '#43AA8B', '#253D5B'];
-
-    let myChart = new Chart(ctx, {
-      type: 'pie',
-      data: {
-        datasets: [
-          {
-            data: [30, 10, 40, 20],
-            backgroundColor: colorHex,
-          },
-        ],
-        labels: labels,
-      },
-      options: {
-        responsive: true,
-        legend: {
-          position: 'bottom',
-        },
-        plugins: {
-          labels: {
-            render: 'percentage',
-          },
-          datalabels: {
-            color: '#fff',
-            anchor: 'end',
-            align: 'start',
-            borderWidth: 2,
-            borderColor: '#fff',
-            borderRadius: 25,
-            font: {
-              weight: 'bold',
-              size: '10',
-            },
-            formatter: (value) => {
-              return value + ' %';
-            },
-          },
-        },
-      },
-    });
-  </script> -->
   <script>
-    // -----------------------------CHARTS----------------------------------------
-    const barChartData = {
+    var dataPieChart = [
+      {
+        data: [53.6, 17.3, 1.8, 5.4, 0.9, 11.8, 11.8, 0.9, 0.9],
+        backgroundColor: [
+          'rgb(255, 99, 132)',
+          'rgb(54, 162, 235)',
+          'rgb(255, 255, 296)',
+          'rgb(75, 192, 192)',
+          'rgb(153, 102, 255)',
+          'rgb(255, 159, 64)',
+          'rgb(255, 99, 182)',
+          'rgb(54, 162, 235)',
+          'rgb(255, 205, 86)',
+        ],
+        borderColor: '#FFFFFF',
+      },
+    ];
+
+    var optionsPieChart = {
+      tooltips: {
+        enabled: true,
+      },
+      plugins: {
+        datalabels: {
+          formatter: (value, ctx) => {
+            if (value < 5) {
+              return '';
+            } else {
+              let sum = ctx.dataset._meta[0].total;
+              let percentage = ((value * 100) / sum).toFixed(2) + '%';
+              return percentage;
+            }
+          },
+          color: '#fff',
+        },
+      },
+    };
+
+    // var dataBarChart = [
+    //   {
+    //     data: [13, 17, 25, 37, 44],
+    //     backgroundColor: [
+    //       'rgba(255, 99, 132, 1)',
+    //       'rgba(255, 99, 132, 1)',
+    //       'rgba(255, 99, 132, 1)',
+    //       'rgba(255, 99, 132, 1)',
+    //       'rgba(255, 99, 132, 1)',
+    //     ],
+    //     borderColor: 'rgba(255,255,255, 0.9)',
+    //   },
+    // ];
+
+    // var optionsBarChart = {
+    //   tooltips: {
+    //     enabled: false,
+    //   },
+    //   plugins: {
+    //     datalabels: {
+    //       color: '#fff',
+    //     },
+    //   },
+    // };
+
+    const dataBarChart = {
       labels: ['2016', '2017', '2018', '2019', '2020'],
       datasets: [
         {
-          type: 'bar',
-          label: 'Liczba wydawców',
+          label: 'ilość wydawców',
           data: [13, 17, 25, 37, 44],
-          borderColor: 'rgba(255,255,255, 0.9)',
-          backgroundColor: 'rgba(255, 99, 132, 1)',
-        },
-      ],
-    };
-
-    const douhgnutChartData = {
-      labels: [
-        'PC',
-        'PC i Konsole',
-        'Konsole',
-        'VR/AR',
-        'VR/AR i Mobilne',
-        'Mobilne',
-        'Nintendo Switch',
-        'Nintendo Switch i Mobile',
-        'PC i Nintendo',
-      ],
-      datasets: [
-        {
-          label: 'Platformy',
-          data: [53.6, 17.3, 1.8, 5.4, 0.9, 11.8, 11.8, 0.9, 0.9],
           backgroundColor: [
-            'rgb(255, 99, 132)',
-            'rgb(54, 162, 235)',
-            'rgb(255, 255, 296)',
-            'rgb(75, 192, 192)',
-            'rgb(153, 102, 255)',
-            'rgb(255, 159, 64)',
-            'rgb(255, 99, 182)',
-            'rgb(54, 162, 235)',
-            'rgb(255, 205, 86)',
+            'rgba(255, 99, 132, 1)',
+            'rgba(255, 99, 132, 1)',
+            'rgba(255, 99, 132, 1)',
+            'rgba(255, 99, 132, 1)',
+            'rgba(255, 99, 132, 1)',
+            // 'rgba(255, 159, 64, 1)',
+            // 'rgba(255, 205, 86, 1)',
+            // 'rgba(75, 192, 192, 1)',
+            // 'rgba(54, 162, 235, 1)',
+            // 'rgba(153, 102, 255, 1)',
+            // 'rgba(201, 203, 207, 1)',
           ],
-          hoverOffset: 4,
+          borderColor: [
+            'rgb(255, 99, 132)',
+            // 'rgb(255, 159, 64)',
+            // 'rgb(255, 205, 86)',
+            // 'rgb(75, 192, 192)',
+            // 'rgb(54, 162, 235)',
+            // 'rgb(153, 102, 255)',
+            // 'rgb(201, 203, 207)',
+          ],
+          borderWidth: 1,
         },
       ],
     };
 
-    const barChartConfig = {
-      type: 'scatter',
-      data: barChartData,
+    const optionsBarChart = {
+      type: 'bar',
+      data: dataBarChart,
       options: {
-        defaultFontColor: '#fff',
+        plugins: {
+          datalabels: {
+            display: false,
+          },
+        },
+        scales: {
+          y: {
+            ticks: { color: 'white', beginAtZero: true },
+          },
+          x: {
+            ticks: { color: 'white', beginAtZero: true },
+          },
+        },
         responsive: true,
         scales: {
           y: {
             ticks: { color: 'white', beginAtZero: true },
           },
-        },
-        legend: {
-          labels: {
-            fontColor: '#ffffff',
+          x: {
+            ticks: { color: 'white', beginAtZero: true },
           },
         },
       },
     };
 
-    const douhgnutChartConfig = {
-      type: 'doughnut',
-      data: douhgnutChartData,
-      plugins: {
-        tooltip: {
-          callbacks: {
-            label: (tooltipItem) => {
-              //tooltipItem is for the slice of the pie you are hovering now
-              return ' ' + tooltipItem.parsed + '%';
-            },
-          },
-        },
+    var pie = document.getElementById('pie-chart').getContext('2d');
+    var bar = document.getElementById('bar-chart').getContext('2d');
+    var pieChart = new Chart(pie, {
+      type: 'pie',
+      data: {
+        labels: [
+          'PC',
+          'PC i Konsole',
+          'Konsole',
+          'VR/AR',
+          'VR/AR i Mobilne',
+          'Mobilne',
+          'Nintendo Switch',
+          'Nintendo Switch i Mobile',
+          'PC i Nintendo',
+        ],
+        datasets: dataPieChart,
       },
-      scales: {
-        y: {
-          ticks: {
-            // Include a dollar sign in the ticks
-            callback: function (value, index, ticks) {
-              return (
-                '$' +
-                Chart.Ticks.formatters.numeric.apply(this, [
-                  value,
-                  index,
-                  ticks,
-                ])
-              );
-            },
-          },
-        },
-      },
-    };
+      options: optionsPieChart,
+    });
 
-    const chart1 = new Chart(document.getElementById('chart1'), barChartConfig);
-    const chart2 = new Chart(
-      document.getElementById('chart2'),
-      douhgnutChartConfig
-    );
+    var barChrt = new Chart(bar, optionsBarChart);
   </script>
 </html>
