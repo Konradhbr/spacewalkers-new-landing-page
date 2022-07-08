@@ -272,7 +272,7 @@ button {
     min-height: 200px;
     max-width: 500px;
     border-radius: 20px;
-    background-color: white;
+    background-color: rgba(255, 255, 255, 0.2);
     border: 4px solid #61e7ff;
     padding: 30px;
     margin-bottom: 30px;
@@ -301,9 +301,17 @@ button {
     &__description {
       p {
         margin-top: 0;
-        color: black;
+        color: white;
         opacity: 1;
         font-weight: bold;
+      }
+    }
+  }
+
+  &#invest-process {
+    .process__step {
+      img {
+        zoom: 1.5;
       }
     }
   }

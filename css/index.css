@@ -642,7 +642,7 @@ button:hover {
   min-height: 200px;
   max-width: 500px;
   border-radius: 20px;
-  background-color: white;
+  background-color: rgba(255, 255, 255, 0.2);
   border: 4px solid #61e7ff;
   padding: 30px;
   margin-bottom: 30px;
@@ -664,9 +664,12 @@ button:hover {
 }
 .process__step__description p {
   margin-top: 0;
-  color: black;
+  color: white;
   opacity: 1;
   font-weight: bold;
+}
+.process#invest-process .process__step img {
+  zoom: 1.5;
 }
 .process.whyinvest .process__steps {
   display: flex;
